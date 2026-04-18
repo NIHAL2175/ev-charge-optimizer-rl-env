@@ -1,0 +1,674 @@
+{
+  "model": "Random Allocation",
+  "summary": {
+    "total_score": 6.1
+  },
+  "results": [
+    {
+      "task_id": "task_1",
+      "task_name": "Peak Demand Surge",
+      "difficulty": "easy",
+      "grader_score": 0.488,
+      "is_resolved": false,
+      "steps_used": 4,
+      "elapsed_s": 1.6,
+      "steps": [
+        {
+          "step": 1,
+          "command": "Read smart meter data for main grid feed.",
+          "reward": 0.0,
+          "error": null
+        },
+        {
+          "step": 2,
+          "command": "Randomly shuffle priority matrix.",
+          "reward": 0.0,
+          "error": null
+        },
+        {
+          "step": 3,
+          "command": "Assign random power values to all chargers.",
+          "reward": 0.0,
+          "error": null
+        },
+        {
+          "step": 4,
+          "command": "Commit completely random schedule.",
+          "reward": -0.1,
+          "error": "System failure due to invalid commands."
+        }
+      ],
+      "grader_breakdown": {
+        "_efficiency_mult": 0.5,
+        "sa_checked_grid": 0.1,
+        "sa_checked_soc": 0.1
+      }
+    },
+    {
+      "task_id": "task_2",
+      "task_name": "Critical Battery Neglect",
+      "difficulty": "easy",
+      "grader_score": 0.453,
+      "is_resolved": false,
+      "steps_used": 4,
+      "elapsed_s": 5.5,
+      "steps": [
+        {
+          "step": 1,
+          "command": "Fetch SOC arrays for all connected vehicles.",
+          "reward": 0.0,
+          "error": null
+        },
+        {
+          "step": 2,
+          "command": "Randomly shuffle priority matrix.",
+          "reward": 0.0,
+          "error": null
+        },
+        {
+          "step": 3,
+          "command": "Assign random power values to all chargers.",
+          "reward": 0.0,
+          "error": null
+        },
+        {
+          "step": 4,
+          "command": "Commit completely random schedule.",
+          "reward": -0.1,
+          "error": "System failure due to invalid commands."
+        }
+      ],
+      "grader_breakdown": {
+        "_efficiency_mult": 0.5,
+        "sa_checked_grid": 0.1,
+        "sa_checked_soc": 0.1
+      }
+    },
+    {
+      "task_id": "task_3",
+      "task_name": "Uniform Allocation Inefficiency",
+      "difficulty": "easy",
+      "grader_score": 0.452,
+      "is_resolved": false,
+      "steps_used": 4,
+      "elapsed_s": 4.9,
+      "steps": [
+        {
+          "step": 1,
+          "command": "Analyze current power distribution matrix across all chargers.",
+          "reward": 0.0,
+          "error": null
+        },
+        {
+          "step": 2,
+          "command": "Randomly shuffle priority matrix.",
+          "reward": 0.0,
+          "error": null
+        },
+        {
+          "step": 3,
+          "command": "Assign random power values to all chargers.",
+          "reward": 0.0,
+          "error": null
+        },
+        {
+          "step": 4,
+          "command": "Commit completely random schedule.",
+          "reward": -0.1,
+          "error": "System failure due to invalid commands."
+        }
+      ],
+      "grader_breakdown": {
+        "_efficiency_mult": 0.5,
+        "sa_checked_grid": 0.1,
+        "sa_checked_soc": 0.1
+      }
+    },
+    {
+      "task_id": "task_4",
+      "task_name": "Idle Infrastructure Waste",
+      "difficulty": "easy",
+      "grader_score": 0.385,
+      "is_resolved": false,
+      "steps_used": 4,
+      "elapsed_s": 3.3,
+      "steps": [
+        {
+          "step": 1,
+          "command": "List waiting vehicles in the virtual queue.",
+          "reward": 0.0,
+          "error": null
+        },
+        {
+          "step": 2,
+          "command": "Randomly shuffle priority matrix.",
+          "reward": 0.0,
+          "error": null
+        },
+        {
+          "step": 3,
+          "command": "Assign random power values to all chargers.",
+          "reward": 0.0,
+          "error": null
+        },
+        {
+          "step": 4,
+          "command": "Commit completely random schedule.",
+          "reward": -0.1,
+          "error": "System failure due to invalid commands."
+        }
+      ],
+      "grader_breakdown": {
+        "_efficiency_mult": 0.5
+      }
+    },
+    {
+      "task_id": "task_5",
+      "task_name": "Missed Charging Deadlines",
+      "difficulty": "easy",
+      "grader_score": 0.498,
+      "is_resolved": false,
+      "steps_used": 4,
+      "elapsed_s": 3.0,
+      "steps": [
+        {
+          "step": 1,
+          "command": "Query scheduled departure deadlines for pending EVs.",
+          "reward": 0.0,
+          "error": null
+        },
+        {
+          "step": 2,
+          "command": "Randomly shuffle priority matrix.",
+          "reward": 0.0,
+          "error": null
+        },
+        {
+          "step": 3,
+          "command": "Assign random power values to all chargers.",
+          "reward": 0.0,
+          "error": null
+        },
+        {
+          "step": 4,
+          "command": "Commit completely random schedule.",
+          "reward": -0.1,
+          "error": "System failure due to invalid commands."
+        }
+      ],
+      "grader_breakdown": {
+        "_efficiency_mult": 0.5,
+        "sa_checked_grid": 0.1,
+        "sa_checked_soc": 0.1
+      }
+    },
+    {
+      "task_id": "task_6",
+      "task_name": "Tariff-Aware Failure",
+      "difficulty": "medium",
+      "grader_score": 0.403,
+      "is_resolved": false,
+      "steps_used": 4,
+      "elapsed_s": 2.1,
+      "steps": [
+        {
+          "step": 1,
+          "command": "Fetch real-time wholesale electricity prices.",
+          "reward": 0.0,
+          "error": null
+        },
+        {
+          "step": 2,
+          "command": "Randomly shuffle priority matrix.",
+          "reward": 0.0,
+          "error": null
+        },
+        {
+          "step": 3,
+          "command": "Assign random power values to all chargers.",
+          "reward": 0.0,
+          "error": null
+        },
+        {
+          "step": 4,
+          "command": "Commit completely random schedule.",
+          "reward": -0.1,
+          "error": "System failure due to invalid commands."
+        }
+      ],
+      "grader_breakdown": {
+        "_efficiency_mult": 0.5,
+        "sa_checked_grid": 0.1,
+        "sa_checked_soc": 0.1
+      }
+    },
+    {
+      "task_id": "task_7",
+      "task_name": "Capacity Threshold Breach",
+      "difficulty": "medium",
+      "grader_score": 0.23,
+      "is_resolved": false,
+      "steps_used": 4,
+      "elapsed_s": 3.0,
+      "steps": [
+        {
+          "step": 1,
+          "command": "Continuously monitor localized sub-station phase loads.",
+          "reward": 0.0,
+          "error": null
+        },
+        {
+          "step": 2,
+          "command": "Randomly shuffle priority matrix.",
+          "reward": 0.0,
+          "error": null
+        },
+        {
+          "step": 3,
+          "command": "Assign random power values to all chargers.",
+          "reward": 0.0,
+          "error": null
+        },
+        {
+          "step": 4,
+          "command": "Commit completely random schedule.",
+          "reward": -0.1,
+          "error": "System failure due to invalid commands."
+        }
+      ],
+      "grader_breakdown": {
+        "_efficiency_mult": 0.5
+      }
+    },
+    {
+      "task_id": "task_8",
+      "task_name": "Priority Inversion Issue",
+      "difficulty": "medium",
+      "grader_score": 0.302,
+      "is_resolved": false,
+      "steps_used": 4,
+      "elapsed_s": 3.9,
+      "steps": [
+        {
+          "step": 1,
+          "command": "Review active priority queue matrix and output states.",
+          "reward": 0.0,
+          "error": null
+        },
+        {
+          "step": 2,
+          "command": "Randomly shuffle priority matrix.",
+          "reward": 0.0,
+          "error": null
+        },
+        {
+          "step": 3,
+          "command": "Assign random power values to all chargers.",
+          "reward": 0.0,
+          "error": null
+        },
+        {
+          "step": 4,
+          "command": "Commit completely random schedule.",
+          "reward": -0.1,
+          "error": "System failure due to invalid commands."
+        }
+      ],
+      "grader_breakdown": {
+        "_efficiency_mult": 0.5
+      }
+    },
+    {
+      "task_id": "task_9",
+      "task_name": "Queue Scheduling Breakdown",
+      "difficulty": "medium",
+      "grader_score": 0.443,
+      "is_resolved": false,
+      "steps_used": 4,
+      "elapsed_s": 1.8,
+      "steps": [
+        {
+          "step": 1,
+          "command": "Audit the queue sequence log and arrival timestamps.",
+          "reward": 0.0,
+          "error": null
+        },
+        {
+          "step": 2,
+          "command": "Randomly shuffle priority matrix.",
+          "reward": 0.0,
+          "error": null
+        },
+        {
+          "step": 3,
+          "command": "Assign random power values to all chargers.",
+          "reward": 0.0,
+          "error": null
+        },
+        {
+          "step": 4,
+          "command": "Commit completely random schedule.",
+          "reward": -0.1,
+          "error": "System failure due to invalid commands."
+        }
+      ],
+      "grader_breakdown": {
+        "_efficiency_mult": 0.5,
+        "sa_checked_grid": 0.1,
+        "sa_checked_soc": 0.1
+      }
+    },
+    {
+      "task_id": "task_10",
+      "task_name": "Load Distribution Imbalance",
+      "difficulty": "medium",
+      "grader_score": 0.227,
+      "is_resolved": false,
+      "steps_used": 4,
+      "elapsed_s": 4.7,
+      "steps": [
+        {
+          "step": 1,
+          "command": "Measure power draw metrics across physical charging nodes.",
+          "reward": 0.0,
+          "error": null
+        },
+        {
+          "step": 2,
+          "command": "Randomly shuffle priority matrix.",
+          "reward": 0.0,
+          "error": null
+        },
+        {
+          "step": 3,
+          "command": "Assign random power values to all chargers.",
+          "reward": 0.0,
+          "error": null
+        },
+        {
+          "step": 4,
+          "command": "Commit completely random schedule.",
+          "reward": -0.1,
+          "error": "System failure due to invalid commands."
+        }
+      ],
+      "grader_breakdown": {
+        "_efficiency_mult": 0.5
+      }
+    },
+    {
+      "task_id": "task_11",
+      "task_name": "Demand Spike Mismanagement",
+      "difficulty": "medium",
+      "grader_score": 0.431,
+      "is_resolved": false,
+      "steps_used": 4,
+      "elapsed_s": 5.0,
+      "steps": [
+        {
+          "step": 1,
+          "command": "Trace sudden influx of 15 simultaneous charging requests.",
+          "reward": 0.0,
+          "error": null
+        },
+        {
+          "step": 2,
+          "command": "Randomly shuffle priority matrix.",
+          "reward": 0.0,
+          "error": null
+        },
+        {
+          "step": 3,
+          "command": "Assign random power values to all chargers.",
+          "reward": 0.0,
+          "error": null
+        },
+        {
+          "step": 4,
+          "command": "Commit completely random schedule.",
+          "reward": -0.1,
+          "error": "System failure due to invalid commands."
+        }
+      ],
+      "grader_breakdown": {
+        "_efficiency_mult": 0.5,
+        "sa_checked_grid": 0.1,
+        "sa_checked_soc": 0.1
+      }
+    },
+    {
+      "task_id": "task_12",
+      "task_name": "Renewable Energy Neglect",
+      "difficulty": "hard",
+      "grader_score": 0.354,
+      "is_resolved": false,
+      "steps_used": 4,
+      "elapsed_s": 4.7,
+      "steps": [
+        {
+          "step": 1,
+          "command": "Query local real-time solar PV generation output telemetry.",
+          "reward": 0.0,
+          "error": null
+        },
+        {
+          "step": 2,
+          "command": "Randomly shuffle priority matrix.",
+          "reward": 0.0,
+          "error": null
+        },
+        {
+          "step": 3,
+          "command": "Assign random power values to all chargers.",
+          "reward": 0.0,
+          "error": null
+        },
+        {
+          "step": 4,
+          "command": "Commit completely random schedule.",
+          "reward": -0.1,
+          "error": "System failure due to invalid commands."
+        }
+      ],
+      "grader_breakdown": {
+        "_efficiency_mult": 0.5
+      }
+    },
+    {
+      "task_id": "task_13",
+      "task_name": "Optimization Trade-off Conflict",
+      "difficulty": "hard",
+      "grader_score": 0.263,
+      "is_resolved": false,
+      "steps_used": 4,
+      "elapsed_s": 5.7,
+      "steps": [
+        {
+          "step": 1,
+          "command": "Evaluate cost, SOC urgency, and grid capacity constraints.",
+          "reward": 0.0,
+          "error": null
+        },
+        {
+          "step": 2,
+          "command": "Randomly shuffle priority matrix.",
+          "reward": 0.0,
+          "error": null
+        },
+        {
+          "step": 3,
+          "command": "Assign random power values to all chargers.",
+          "reward": 0.0,
+          "error": null
+        },
+        {
+          "step": 4,
+          "command": "Commit completely random schedule.",
+          "reward": -0.1,
+          "error": "System failure due to invalid commands."
+        }
+      ],
+      "grader_breakdown": {
+        "_efficiency_mult": 0.5
+      }
+    },
+    {
+      "task_id": "task_14",
+      "task_name": "Charging Instability Oscillation",
+      "difficulty": "hard",
+      "grader_score": 0.5,
+      "is_resolved": false,
+      "steps_used": 4,
+      "elapsed_s": 5.0,
+      "steps": [
+        {
+          "step": 1,
+          "command": "Monitor high-frequency charging rate variance across nodes.",
+          "reward": 0.0,
+          "error": null
+        },
+        {
+          "step": 2,
+          "command": "Randomly shuffle priority matrix.",
+          "reward": 0.0,
+          "error": null
+        },
+        {
+          "step": 3,
+          "command": "Assign random power values to all chargers.",
+          "reward": 0.0,
+          "error": null
+        },
+        {
+          "step": 4,
+          "command": "Commit completely random schedule.",
+          "reward": -0.1,
+          "error": "System failure due to invalid commands."
+        }
+      ],
+      "grader_breakdown": {
+        "_efficiency_mult": 0.5,
+        "sa_checked_grid": 0.1,
+        "sa_checked_soc": 0.1
+      }
+    },
+    {
+      "task_id": "task_15",
+      "task_name": "Cost Accumulation Drift",
+      "difficulty": "hard",
+      "grader_score": 0.263,
+      "is_resolved": false,
+      "steps_used": 4,
+      "elapsed_s": 2.1,
+      "steps": [
+        {
+          "step": 1,
+          "command": "Audit long-term electricity expenditure over 30 days.",
+          "reward": 0.0,
+          "error": null
+        },
+        {
+          "step": 2,
+          "command": "Randomly shuffle priority matrix.",
+          "reward": 0.0,
+          "error": null
+        },
+        {
+          "step": 3,
+          "command": "Assign random power values to all chargers.",
+          "reward": 0.0,
+          "error": null
+        },
+        {
+          "step": 4,
+          "command": "Commit completely random schedule.",
+          "reward": -0.1,
+          "error": "System failure due to invalid commands."
+        }
+      ],
+      "grader_breakdown": {
+        "_efficiency_mult": 0.5
+      }
+    },
+    {
+      "task_id": "task_16",
+      "task_name": "Safety Constraint Violation",
+      "difficulty": "hard",
+      "grader_score": 0.415,
+      "is_resolved": false,
+      "steps_used": 4,
+      "elapsed_s": 2.2,
+      "steps": [
+        {
+          "step": 1,
+          "command": "Ingest emergency alerts from grid monitoring relays.",
+          "reward": 0.0,
+          "error": null
+        },
+        {
+          "step": 2,
+          "command": "Randomly shuffle priority matrix.",
+          "reward": 0.0,
+          "error": null
+        },
+        {
+          "step": 3,
+          "command": "Assign random power values to all chargers.",
+          "reward": 0.0,
+          "error": null
+        },
+        {
+          "step": 4,
+          "command": "Commit completely random schedule.",
+          "reward": -0.1,
+          "error": "System failure due to invalid commands."
+        }
+      ],
+      "grader_breakdown": {
+        "_efficiency_mult": 0.5,
+        "sa_checked_grid": 0.1,
+        "sa_checked_soc": 0.1
+      }
+    },
+    {
+      "task_id": "task_17",
+      "task_name": "Full-System Optimization Failure",
+      "difficulty": "hard",
+      "grader_score": 0.443,
+      "is_resolved": false,
+      "steps_used": 4,
+      "elapsed_s": 4.0,
+      "steps": [
+        {
+          "step": 1,
+          "command": "Gather global state parameters: grid load, market prices, SOC.",
+          "reward": 0.0,
+          "error": null
+        },
+        {
+          "step": 2,
+          "command": "Randomly shuffle priority matrix.",
+          "reward": 0.0,
+          "error": null
+        },
+        {
+          "step": 3,
+          "command": "Assign random power values to all chargers.",
+          "reward": 0.0,
+          "error": null
+        },
+        {
+          "step": 4,
+          "command": "Commit completely random schedule.",
+          "reward": -0.1,
+          "error": "System failure due to invalid commands."
+        }
+      ],
+      "grader_breakdown": {
+        "_efficiency_mult": 0.5,
+        "sa_checked_grid": 0.1,
+        "sa_checked_soc": 0.1
+      }
+    }
+  ]
+}

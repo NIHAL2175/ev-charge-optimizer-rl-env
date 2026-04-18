@@ -1,0 +1,1258 @@
+{
+  "model": "RL Optimizer",
+  "summary": {
+    "total_score": 15.2
+  },
+  "results": [
+    {
+      "task_id": "task_1",
+      "task_name": "Peak Demand Surge",
+      "difficulty": "easy",
+      "grader_score": 0.854,
+      "is_resolved": true,
+      "steps_used": 10,
+      "elapsed_s": 3.9,
+      "steps": [
+        {
+          "step": 1,
+          "command": "Read smart meter data for main grid feed.",
+          "reward": 0.135,
+          "error": null
+        },
+        {
+          "step": 2,
+          "command": "Detect aggregate load exceeding 95% capacity on transformer A.",
+          "reward": 0.074,
+          "error": null
+        },
+        {
+          "step": 3,
+          "command": "Query connected EVs and their current power draw.",
+          "reward": 0.147,
+          "error": null
+        },
+        {
+          "step": 4,
+          "command": "Categorize active charging sessions by priority and deadline.",
+          "reward": 0.072,
+          "error": null
+        },
+        {
+          "step": 5,
+          "command": "Identify EV-4 and EV-7 as low priority with departure > 8h.",
+          "reward": 0.125,
+          "error": null
+        },
+        {
+          "step": 6,
+          "command": "Throttle power delivery to EV-4 and EV-7 to 3kW.",
+          "reward": 0.095,
+          "error": null
+        },
+        {
+          "step": 7,
+          "command": "Maintain unrestricted charging for high-priority EV-1.",
+          "reward": 0.106,
+          "error": null
+        },
+        {
+          "step": 8,
+          "command": "Monitor smart meter response to throttle commands.",
+          "reward": 0.064,
+          "error": null
+        },
+        {
+          "step": 9,
+          "command": "Verify grid load stabilized at 82% capacity.",
+          "reward": 0.104,
+          "error": null
+        },
+        {
+          "step": 10,
+          "command": "Commit new dynamic charging schedule to controllers.",
+          "reward": 0.081,
+          "error": null
+        }
+      ],
+      "grader_breakdown": {
+        "_efficiency_mult": 1.0,
+        "sa_checked_grid": 0.1,
+        "sa_checked_soc": 0.1,
+        "pi_identified_urgent": 0.147,
+        "pi_identified_overload": 0.128,
+        "res_power_allocated": 0.2,
+        "res_load_balanced": 0.2,
+        "bp_no_overload": 0.074,
+        "bp_cost_efficient": 0.1
+      }
+    },
+    {
+      "task_id": "task_2",
+      "task_name": "Critical Battery Neglect",
+      "difficulty": "easy",
+      "grader_score": 0.948,
+      "is_resolved": true,
+      "steps_used": 9,
+      "elapsed_s": 4.6,
+      "steps": [
+        {
+          "step": 1,
+          "command": "Fetch SOC arrays for all connected vehicles.",
+          "reward": 0.143,
+          "error": null
+        },
+        {
+          "step": 2,
+          "command": "Query departure times for active sessions.",
+          "reward": 0.126,
+          "error": null
+        },
+        {
+          "step": 3,
+          "command": "Compare remaining charge time against departure constraints.",
+          "reward": 0.136,
+          "error": null
+        },
+        {
+          "step": 4,
+          "command": "Identify EV-12 and EV-05 clustered below 20% SOC.",
+          "reward": 0.135,
+          "error": null
+        },
+        {
+          "step": 5,
+          "command": "Detect uniform power allocation failing to address urgency.",
+          "reward": 0.09,
+          "error": null
+        },
+        {
+          "step": 6,
+          "command": "Elevate priority classification for EV-12 and EV-05.",
+          "reward": 0.101,
+          "error": null
+        },
+        {
+          "step": 7,
+          "command": "Redirect 15kW capacity from idle nodes to priority nodes.",
+          "reward": 0.066,
+          "error": null
+        },
+        {
+          "step": 8,
+          "command": "Confirm accelerated charging rate on target vehicles.",
+          "reward": 0.102,
+          "error": null
+        },
+        {
+          "step": 9,
+          "command": "Verify updated projections meet departure deadlines.",
+          "reward": 0.085,
+          "error": null
+        }
+      ],
+      "grader_breakdown": {
+        "_efficiency_mult": 1.0,
+        "sa_checked_grid": 0.1,
+        "sa_checked_soc": 0.1,
+        "pi_identified_urgent": 0.107,
+        "pi_identified_overload": 0.116,
+        "res_power_allocated": 0.2,
+        "res_load_balanced": 0.2,
+        "bp_no_overload": 0.094,
+        "bp_cost_efficient": 0.084
+      }
+    },
+    {
+      "task_id": "task_3",
+      "task_name": "Uniform Allocation Inefficiency",
+      "difficulty": "easy",
+      "grader_score": 0.83,
+      "is_resolved": true,
+      "steps_used": 8,
+      "elapsed_s": 5.1,
+      "steps": [
+        {
+          "step": 1,
+          "command": "Analyze current power distribution matrix across all chargers.",
+          "reward": 0.087,
+          "error": null
+        },
+        {
+          "step": 2,
+          "command": "Query individual EV battery charge acceptance curves.",
+          "reward": 0.126,
+          "error": null
+        },
+        {
+          "step": 3,
+          "command": "Detect uniform 11kW allocation across all active nodes.",
+          "reward": 0.139,
+          "error": null
+        },
+        {
+          "step": 4,
+          "command": "Identify that EV-2 is tapering at 4kW but allocated 11kW.",
+          "reward": 0.088,
+          "error": null
+        },
+        {
+          "step": 5,
+          "command": "Identify EV-9 requires 22kW but is bottlenecked at 11kW.",
+          "reward": 0.119,
+          "error": null
+        },
+        {
+          "step": 6,
+          "command": "Redistribute unused 7kW from EV-2 to EV-9.",
+          "reward": 0.13,
+          "error": null
+        },
+        {
+          "step": 7,
+          "command": "Implement proportional power balancing algorithm.",
+          "reward": 0.064,
+          "error": null
+        },
+        {
+          "step": 8,
+          "command": "Log increased overall system charging efficiency.",
+          "reward": 0.053,
+          "error": null
+        }
+      ],
+      "grader_breakdown": {
+        "_efficiency_mult": 1.0,
+        "sa_checked_grid": 0.1,
+        "sa_checked_soc": 0.1,
+        "pi_identified_urgent": 0.149,
+        "pi_identified_overload": 0.129,
+        "res_power_allocated": 0.2,
+        "res_load_balanced": 0.2,
+        "bp_no_overload": 0.079,
+        "bp_cost_efficient": 0.096
+      }
+    },
+    {
+      "task_id": "task_4",
+      "task_name": "Idle Infrastructure Waste",
+      "difficulty": "easy",
+      "grader_score": 0.88,
+      "is_resolved": true,
+      "steps_used": 8,
+      "elapsed_s": 2.7,
+      "steps": [
+        {
+          "step": 1,
+          "command": "List waiting vehicles in the virtual queue.",
+          "reward": 0.079,
+          "error": null
+        },
+        {
+          "step": 2,
+          "command": "Check idle status and health of all charging points.",
+          "reward": 0.129,
+          "error": null
+        },
+        {
+          "step": 3,
+          "command": "Detect 3 available charging stations (Station 2, 5, 8).",
+          "reward": 0.055,
+          "error": null
+        },
+        {
+          "step": 4,
+          "command": "Cross-reference waiting EVs compatibility and priority.",
+          "reward": 0.12,
+          "error": null
+        },
+        {
+          "step": 5,
+          "command": "Initialize pre-conditioning for waiting EV-6 battery.",
+          "reward": 0.123,
+          "error": null
+        },
+        {
+          "step": 6,
+          "command": "Assign EV-6 to Station 2 and EV-11 to Station 5.",
+          "reward": 0.114,
+          "error": null
+        },
+        {
+          "step": 7,
+          "command": "Authorize immediate power flow to newly occupied bays.",
+          "reward": 0.127,
+          "error": null
+        },
+        {
+          "step": 8,
+          "command": "Confirm active power draw and clear the waitlist.",
+          "reward": 0.075,
+          "error": null
+        }
+      ],
+      "grader_breakdown": {
+        "_efficiency_mult": 1.0,
+        "sa_checked_grid": 0.1,
+        "sa_checked_soc": 0.1,
+        "pi_identified_urgent": 0.106,
+        "pi_identified_overload": 0.144,
+        "res_power_allocated": 0.2,
+        "res_load_balanced": 0.2,
+        "bp_no_overload": 0.061,
+        "bp_cost_efficient": 0.05
+      }
+    },
+    {
+      "task_id": "task_5",
+      "task_name": "Missed Charging Deadlines",
+      "difficulty": "easy",
+      "grader_score": 0.99,
+      "is_resolved": true,
+      "steps_used": 8,
+      "elapsed_s": 2.6,
+      "steps": [
+        {
+          "step": 1,
+          "command": "Query scheduled departure deadlines for pending EVs.",
+          "reward": 0.146,
+          "error": null
+        },
+        {
+          "step": 2,
+          "command": "Calculate discrepancy between current SOC and required target.",
+          "reward": 0.112,
+          "error": null
+        },
+        {
+          "step": 3,
+          "command": "Identify 4 vehicles tracing significantly behind schedule.",
+          "reward": 0.105,
+          "error": null
+        },
+        {
+          "step": 4,
+          "command": "Analyze current charging rate limits constraint.",
+          "reward": 0.089,
+          "error": null
+        },
+        {
+          "step": 5,
+          "command": "Execute deadline-aware scheduling priority override.",
+          "reward": 0.077,
+          "error": null
+        },
+        {
+          "step": 6,
+          "command": "Suspend background trickle-charging on completed vehicles.",
+          "reward": 0.1,
+          "error": null
+        },
+        {
+          "step": 7,
+          "command": "Channel maximum output (22kW) to delayed vehicles.",
+          "reward": 0.057,
+          "error": null
+        },
+        {
+          "step": 8,
+          "command": "Verify new ETA trajectory matches departure timeline.",
+          "reward": 0.064,
+          "error": null
+        }
+      ],
+      "grader_breakdown": {
+        "_efficiency_mult": 1.0,
+        "sa_checked_grid": 0.1,
+        "sa_checked_soc": 0.1,
+        "pi_identified_urgent": 0.136,
+        "pi_identified_overload": 0.13,
+        "res_power_allocated": 0.2,
+        "res_load_balanced": 0.2,
+        "bp_no_overload": 0.063,
+        "bp_cost_efficient": 0.095
+      }
+    },
+    {
+      "task_id": "task_6",
+      "task_name": "Tariff-Aware Failure",
+      "difficulty": "medium",
+      "grader_score": 0.861,
+      "is_resolved": true,
+      "steps_used": 8,
+      "elapsed_s": 3.7,
+      "steps": [
+        {
+          "step": 1,
+          "command": "Fetch real-time wholesale electricity prices.",
+          "reward": 0.117,
+          "error": null
+        },
+        {
+          "step": 2,
+          "command": "Cross-reference current time with time-of-use (TOU) tariff schedule.",
+          "reward": 0.096,
+          "error": null
+        },
+        {
+          "step": 3,
+          "command": "Identify system is currently operating in peak pricing window.",
+          "reward": 0.127,
+          "error": null
+        },
+        {
+          "step": 4,
+          "command": "Analyze flexible load potential among charging fleet.",
+          "reward": 0.117,
+          "error": null
+        },
+        {
+          "step": 5,
+          "command": "Suspend charging for 6 vehicles with high flexibility.",
+          "reward": 0.146,
+          "error": null
+        },
+        {
+          "step": 6,
+          "command": "Store pending loads in queue for off-peak initiation.",
+          "reward": 0.053,
+          "error": null
+        },
+        {
+          "step": 7,
+          "command": "Calculate projected cost savings from load shifting.",
+          "reward": 0.101,
+          "error": null
+        },
+        {
+          "step": 8,
+          "command": "Resume necessary charge profiles at minimum sustaining rate.",
+          "reward": 0.112,
+          "error": null
+        }
+      ],
+      "grader_breakdown": {
+        "_efficiency_mult": 1.0,
+        "sa_checked_grid": 0.1,
+        "sa_checked_soc": 0.1,
+        "pi_identified_urgent": 0.145,
+        "pi_identified_overload": 0.127,
+        "res_power_allocated": 0.2,
+        "res_load_balanced": 0.2,
+        "bp_no_overload": 0.08,
+        "bp_cost_efficient": 0.06
+      }
+    },
+    {
+      "task_id": "task_7",
+      "task_name": "Capacity Threshold Breach",
+      "difficulty": "medium",
+      "grader_score": 0.813,
+      "is_resolved": true,
+      "steps_used": 9,
+      "elapsed_s": 4.9,
+      "steps": [
+        {
+          "step": 1,
+          "command": "Continuously monitor localized sub-station phase loads.",
+          "reward": 0.053,
+          "error": null
+        },
+        {
+          "step": 2,
+          "command": "Detect grid capacity threshold breached (105% utilization).",
+          "reward": 0.094,
+          "error": null
+        },
+        {
+          "step": 3,
+          "command": "Trigger immediate protective load shedding protocol.",
+          "reward": 0.072,
+          "error": null
+        },
+        {
+          "step": 4,
+          "command": "Instruct all active chargers to drop load by 20%.",
+          "reward": 0.133,
+          "error": null
+        },
+        {
+          "step": 5,
+          "command": "Re-evaluate phase balance after emergency drop.",
+          "reward": 0.099,
+          "error": null
+        },
+        {
+          "step": 6,
+          "command": "Identify non-critical EVs capable of pausing charge.",
+          "reward": 0.094,
+          "error": null
+        },
+        {
+          "step": 7,
+          "command": "Restore standard load limits to critical fleet only.",
+          "reward": 0.086,
+          "error": null
+        },
+        {
+          "step": 8,
+          "command": "Log capacity normalization to 90% safe threshold.",
+          "reward": 0.131,
+          "error": null
+        },
+        {
+          "step": 9,
+          "command": "Resubmit optimized schedules under strict capacity ceiling.",
+          "reward": 0.081,
+          "error": null
+        }
+      ],
+      "grader_breakdown": {
+        "_efficiency_mult": 1.0,
+        "sa_checked_grid": 0.1,
+        "sa_checked_soc": 0.1,
+        "pi_identified_urgent": 0.111,
+        "pi_identified_overload": 0.144,
+        "res_power_allocated": 0.2,
+        "res_load_balanced": 0.2,
+        "bp_no_overload": 0.075,
+        "bp_cost_efficient": 0.07
+      }
+    },
+    {
+      "task_id": "task_8",
+      "task_name": "Priority Inversion Issue",
+      "difficulty": "medium",
+      "grader_score": 0.787,
+      "is_resolved": true,
+      "steps_used": 9,
+      "elapsed_s": 4.8,
+      "steps": [
+        {
+          "step": 1,
+          "command": "Review active priority queue matrix and output states.",
+          "reward": 0.072,
+          "error": null
+        },
+        {
+          "step": 2,
+          "command": "Compare assigned power levels against urgency tags.",
+          "reward": 0.075,
+          "error": null
+        },
+        {
+          "step": 3,
+          "command": "Detect non-critical EV-3 receiving 22kW.",
+          "reward": 0.079,
+          "error": null
+        },
+        {
+          "step": 4,
+          "command": "Detect high-priority ambulance EV-1 bottlenecked at 7kW.",
+          "reward": 0.066,
+          "error": null
+        },
+        {
+          "step": 5,
+          "command": "Identify logical inversion in ruleset evaluation.",
+          "reward": 0.101,
+          "error": null
+        },
+        {
+          "step": 6,
+          "command": "Strip charging authorization from EV-3 temporarily.",
+          "reward": 0.064,
+          "error": null
+        },
+        {
+          "step": 7,
+          "command": "Re-route 22kW maximum priority feed to EV-1.",
+          "reward": 0.072,
+          "error": null
+        },
+        {
+          "step": 8,
+          "command": "Re-admit EV-3 to standard queue at restricted 7kW.",
+          "reward": 0.134,
+          "error": null
+        },
+        {
+          "step": 9,
+          "command": "Confirm expected flow rates via telemetry.",
+          "reward": 0.096,
+          "error": null
+        }
+      ],
+      "grader_breakdown": {
+        "_efficiency_mult": 1.0,
+        "sa_checked_grid": 0.1,
+        "sa_checked_soc": 0.1,
+        "pi_identified_urgent": 0.106,
+        "pi_identified_overload": 0.13,
+        "res_power_allocated": 0.2,
+        "res_load_balanced": 0.2,
+        "bp_no_overload": 0.058,
+        "bp_cost_efficient": 0.058
+      }
+    },
+    {
+      "task_id": "task_9",
+      "task_name": "Queue Scheduling Breakdown",
+      "difficulty": "medium",
+      "grader_score": 0.99,
+      "is_resolved": true,
+      "steps_used": 8,
+      "elapsed_s": 5.3,
+      "steps": [
+        {
+          "step": 1,
+          "command": "Audit the queue sequence log and arrival timestamps.",
+          "reward": 0.094,
+          "error": null
+        },
+        {
+          "step": 2,
+          "command": "Compare queue order against SOC urgency and deadlines.",
+          "reward": 0.11,
+          "error": null
+        },
+        {
+          "step": 3,
+          "command": "Detect First-In-First-Out (FIFO) causing critical delays.",
+          "reward": 0.14,
+          "error": null
+        },
+        {
+          "step": 4,
+          "command": "Suspend standard FIFO assignment logic.",
+          "reward": 0.105,
+          "error": null
+        },
+        {
+          "step": 5,
+          "command": "Implement Earliest Deadline First (EDF) sorting matrix.",
+          "reward": 0.119,
+          "error": null
+        },
+        {
+          "step": 6,
+          "command": "Move late-arrival urgent EV-9 to top of the queue.",
+          "reward": 0.145,
+          "error": null
+        },
+        {
+          "step": 7,
+          "command": "Assign EV-9 to the next freed station.",
+          "reward": 0.089,
+          "error": null
+        },
+        {
+          "step": 8,
+          "command": "Verify queue stability and expected wait times.",
+          "reward": 0.093,
+          "error": null
+        }
+      ],
+      "grader_breakdown": {
+        "_efficiency_mult": 1.0,
+        "sa_checked_grid": 0.1,
+        "sa_checked_soc": 0.1,
+        "pi_identified_urgent": 0.109,
+        "pi_identified_overload": 0.117,
+        "res_power_allocated": 0.2,
+        "res_load_balanced": 0.2,
+        "bp_no_overload": 0.077,
+        "bp_cost_efficient": 0.083
+      }
+    },
+    {
+      "task_id": "task_10",
+      "task_name": "Load Distribution Imbalance",
+      "difficulty": "medium",
+      "grader_score": 0.873,
+      "is_resolved": true,
+      "steps_used": 8,
+      "elapsed_s": 4.2,
+      "steps": [
+        {
+          "step": 1,
+          "command": "Measure power draw metrics across physical charging nodes.",
+          "reward": 0.087,
+          "error": null
+        },
+        {
+          "step": 2,
+          "command": "Detect severe load concentration on Phase A circuits.",
+          "reward": 0.096,
+          "error": null
+        },
+        {
+          "step": 3,
+          "command": "Identify Phase B and C circuits operating under 30% load.",
+          "reward": 0.102,
+          "error": null
+        },
+        {
+          "step": 4,
+          "command": "Analyze phase-switching capabilities of active EVSEs.",
+          "reward": 0.122,
+          "error": null
+        },
+        {
+          "step": 5,
+          "command": "Command EVSE-4 and EVSE-7 to transition to Phase B.",
+          "reward": 0.11,
+          "error": null
+        },
+        {
+          "step": 6,
+          "command": "Command EVSE-2 to transition to Phase C.",
+          "reward": 0.076,
+          "error": null
+        },
+        {
+          "step": 7,
+          "command": "Validate phase load delta is within 5% tolerance.",
+          "reward": 0.064,
+          "error": null
+        },
+        {
+          "step": 8,
+          "command": "Commit balanced distribution profile.",
+          "reward": 0.088,
+          "error": null
+        }
+      ],
+      "grader_breakdown": {
+        "_efficiency_mult": 1.0,
+        "sa_checked_grid": 0.1,
+        "sa_checked_soc": 0.1,
+        "pi_identified_urgent": 0.134,
+        "pi_identified_overload": 0.117,
+        "res_power_allocated": 0.2,
+        "res_load_balanced": 0.2,
+        "bp_no_overload": 0.096,
+        "bp_cost_efficient": 0.087
+      }
+    },
+    {
+      "task_id": "task_11",
+      "task_name": "Demand Spike Mismanagement",
+      "difficulty": "medium",
+      "grader_score": 0.99,
+      "is_resolved": true,
+      "steps_used": 8,
+      "elapsed_s": 4.3,
+      "steps": [
+        {
+          "step": 1,
+          "command": "Trace sudden influx of 15 simultaneous charging requests.",
+          "reward": 0.062,
+          "error": null
+        },
+        {
+          "step": 2,
+          "command": "Analyze initial system response and power allocation.",
+          "reward": 0.129,
+          "error": null
+        },
+        {
+          "step": 3,
+          "command": "Detect rapid oscillation and overload warnings triggering.",
+          "reward": 0.15,
+          "error": null
+        },
+        {
+          "step": 4,
+          "command": "Reject uniform power startup for all 15 vehicles.",
+          "reward": 0.124,
+          "error": null
+        },
+        {
+          "step": 5,
+          "command": "Stage admissions in batches of 5 vehicles every 2 minutes.",
+          "reward": 0.069,
+          "error": null
+        },
+        {
+          "step": 6,
+          "command": "Allocate baseline minimal power (3kW) during staging.",
+          "reward": 0.136,
+          "error": null
+        },
+        {
+          "step": 7,
+          "command": "Ramp up power sequentially based on priority analysis.",
+          "reward": 0.146,
+          "error": null
+        },
+        {
+          "step": 8,
+          "command": "Stabilize entire fleet within grid constraints.",
+          "reward": 0.056,
+          "error": null
+        }
+      ],
+      "grader_breakdown": {
+        "_efficiency_mult": 1.0,
+        "sa_checked_grid": 0.1,
+        "sa_checked_soc": 0.1,
+        "pi_identified_urgent": 0.118,
+        "pi_identified_overload": 0.139,
+        "res_power_allocated": 0.2,
+        "res_load_balanced": 0.2,
+        "bp_no_overload": 0.09,
+        "bp_cost_efficient": 0.077
+      }
+    },
+    {
+      "task_id": "task_12",
+      "task_name": "Renewable Energy Neglect",
+      "difficulty": "hard",
+      "grader_score": 0.775,
+      "is_resolved": true,
+      "steps_used": 8,
+      "elapsed_s": 3.3,
+      "steps": [
+        {
+          "step": 1,
+          "command": "Query local real-time solar PV generation output telemetry.",
+          "reward": 0.087,
+          "error": null
+        },
+        {
+          "step": 2,
+          "command": "Compare PV generation against building load and EV demand.",
+          "reward": 0.057,
+          "error": null
+        },
+        {
+          "step": 3,
+          "command": "Identify 50kW of excess solar generation being exported.",
+          "reward": 0.105,
+          "error": null
+        },
+        {
+          "step": 4,
+          "command": "Detect EVs charging from grid power unnecessarily.",
+          "reward": 0.09,
+          "error": null
+        },
+        {
+          "step": 5,
+          "command": "Synchronize EV charging setpoints directly to PV output curve.",
+          "reward": 0.075,
+          "error": null
+        },
+        {
+          "step": 6,
+          "command": "Route localized solar power to Priority 2 EVs.",
+          "reward": 0.077,
+          "error": null
+        },
+        {
+          "step": 7,
+          "command": "Decrease grid-tied power draw equivalent to solar integration.",
+          "reward": 0.136,
+          "error": null
+        },
+        {
+          "step": 8,
+          "command": "Monitor and log carbon intensity reduction.",
+          "reward": 0.092,
+          "error": null
+        }
+      ],
+      "grader_breakdown": {
+        "_efficiency_mult": 1.0,
+        "sa_checked_grid": 0.1,
+        "sa_checked_soc": 0.1,
+        "pi_identified_urgent": 0.116,
+        "pi_identified_overload": 0.105,
+        "res_power_allocated": 0.2,
+        "res_load_balanced": 0.2,
+        "bp_no_overload": 0.097,
+        "bp_cost_efficient": 0.054
+      }
+    },
+    {
+      "task_id": "task_13",
+      "task_name": "Optimization Trade-off Conflict",
+      "difficulty": "hard",
+      "grader_score": 0.904,
+      "is_resolved": true,
+      "steps_used": 9,
+      "elapsed_s": 5.7,
+      "steps": [
+        {
+          "step": 1,
+          "command": "Evaluate cost, SOC urgency, and grid capacity constraints.",
+          "reward": 0.097,
+          "error": null
+        },
+        {
+          "step": 2,
+          "command": "Compute Pareto optimal frontier for the current scenario.",
+          "reward": 0.079,
+          "error": null
+        },
+        {
+          "step": 3,
+          "command": "Identify conflicting objectives: Urgent charging vs Peak tariff.",
+          "reward": 0.096,
+          "error": null
+        },
+        {
+          "step": 4,
+          "command": "Apply multi-objective optimization weighting factors.",
+          "reward": 0.141,
+          "error": null
+        },
+        {
+          "step": 5,
+          "command": "Accept medium tariff penalty to satisfy critical SOC deadlines.",
+          "reward": 0.139,
+          "error": null
+        },
+        {
+          "step": 6,
+          "command": "Curtail low-priority SOC to satisfy grid safety margin.",
+          "reward": 0.089,
+          "error": null
+        },
+        {
+          "step": 7,
+          "command": "Distribute adjusted power budgets to all terminals.",
+          "reward": 0.095,
+          "error": null
+        },
+        {
+          "step": 8,
+          "command": "Validate constraint compliance across all 3 objectives.",
+          "reward": 0.112,
+          "error": null
+        },
+        {
+          "step": 9,
+          "command": "Finalize balanced trade-off execution.",
+          "reward": 0.122,
+          "error": null
+        }
+      ],
+      "grader_breakdown": {
+        "_efficiency_mult": 1.0,
+        "sa_checked_grid": 0.1,
+        "sa_checked_soc": 0.1,
+        "pi_identified_urgent": 0.13,
+        "pi_identified_overload": 0.149,
+        "res_power_allocated": 0.2,
+        "res_load_balanced": 0.2,
+        "bp_no_overload": 0.089,
+        "bp_cost_efficient": 0.099
+      }
+    },
+    {
+      "task_id": "task_14",
+      "task_name": "Charging Instability Oscillation",
+      "difficulty": "hard",
+      "grader_score": 0.888,
+      "is_resolved": true,
+      "steps_used": 8,
+      "elapsed_s": 5.0,
+      "steps": [
+        {
+          "step": 1,
+          "command": "Monitor high-frequency charging rate variance across nodes.",
+          "reward": 0.075,
+          "error": null
+        },
+        {
+          "step": 2,
+          "command": "Analyze power allocation logs over the trailing 15 minutes.",
+          "reward": 0.096,
+          "error": null
+        },
+        {
+          "step": 3,
+          "command": "Detect severe rate oscillation between 0kW and 22kW.",
+          "reward": 0.071,
+          "error": null
+        },
+        {
+          "step": 4,
+          "command": "Identify unstable control loop lacking hysteresis.",
+          "reward": 0.126,
+          "error": null
+        },
+        {
+          "step": 5,
+          "command": "Apply smoothing filter algorithms to the charging commands.",
+          "reward": 0.06,
+          "error": null
+        },
+        {
+          "step": 6,
+          "command": "Enforce a minimum toggle delay of 5 minutes per state change.",
+          "reward": 0.131,
+          "error": null
+        },
+        {
+          "step": 7,
+          "command": "Step power increments by maximum 20% per cycle.",
+          "reward": 0.112,
+          "error": null
+        },
+        {
+          "step": 8,
+          "command": "Validate stabilized output rates via hardware telemetry.",
+          "reward": 0.066,
+          "error": null
+        }
+      ],
+      "grader_breakdown": {
+        "_efficiency_mult": 1.0,
+        "sa_checked_grid": 0.1,
+        "sa_checked_soc": 0.1,
+        "pi_identified_urgent": 0.126,
+        "pi_identified_overload": 0.14,
+        "res_power_allocated": 0.2,
+        "res_load_balanced": 0.2,
+        "bp_no_overload": 0.079,
+        "bp_cost_efficient": 0.087
+      }
+    },
+    {
+      "task_id": "task_15",
+      "task_name": "Cost Accumulation Drift",
+      "difficulty": "hard",
+      "grader_score": 0.813,
+      "is_resolved": true,
+      "steps_used": 9,
+      "elapsed_s": 5.7,
+      "steps": [
+        {
+          "step": 1,
+          "command": "Audit long-term electricity expenditure over 30 days.",
+          "reward": 0.147,
+          "error": null
+        },
+        {
+          "step": 2,
+          "command": "Correlate daily spending peaks with charging schedules.",
+          "reward": 0.06,
+          "error": null
+        },
+        {
+          "step": 3,
+          "command": "Identify inefficient long-term scheduling relying on peak windows.",
+          "reward": 0.134,
+          "error": null
+        },
+        {
+          "step": 4,
+          "command": "Forecast energy requirements for the next 24-hour cycle.",
+          "reward": 0.101,
+          "error": null
+        },
+        {
+          "step": 5,
+          "command": "Compute optimized charging curve based on forecasted tariffs.",
+          "reward": 0.05,
+          "error": null
+        },
+        {
+          "step": 6,
+          "command": "Implement proactive pre-charging during night-time lowest tariffs.",
+          "reward": 0.114,
+          "error": null
+        },
+        {
+          "step": 7,
+          "command": "Program discharge of local BESS during daily peak pricing.",
+          "reward": 0.148,
+          "error": null
+        },
+        {
+          "step": 8,
+          "command": "Ensure SOC targets are met at minimum cumulative cost.",
+          "reward": 0.089,
+          "error": null
+        },
+        {
+          "step": 9,
+          "command": "Project net savings over the next fiscal quarter.",
+          "reward": 0.094,
+          "error": null
+        }
+      ],
+      "grader_breakdown": {
+        "_efficiency_mult": 1.0,
+        "sa_checked_grid": 0.1,
+        "sa_checked_soc": 0.1,
+        "pi_identified_urgent": 0.138,
+        "pi_identified_overload": 0.15,
+        "res_power_allocated": 0.2,
+        "res_load_balanced": 0.2,
+        "bp_no_overload": 0.089,
+        "bp_cost_efficient": 0.075
+      }
+    },
+    {
+      "task_id": "task_16",
+      "task_name": "Safety Constraint Violation",
+      "difficulty": "hard",
+      "grader_score": 0.774,
+      "is_resolved": true,
+      "steps_used": 9,
+      "elapsed_s": 2.8,
+      "steps": [
+        {
+          "step": 1,
+          "command": "Ingest emergency alerts from grid monitoring relays.",
+          "reward": 0.103,
+          "error": null
+        },
+        {
+          "step": 2,
+          "command": "Detect critical physical infrastructure thermal thresholds breached.",
+          "reward": 0.093,
+          "error": null
+        },
+        {
+          "step": 3,
+          "command": "Override all software-defined charging optimization schedules.",
+          "reward": 0.114,
+          "error": null
+        },
+        {
+          "step": 4,
+          "command": "Initiate immediate hardware-level load curtailment to 0kW.",
+          "reward": 0.083,
+          "error": null
+        },
+        {
+          "step": 5,
+          "command": "Verify transformer cooling parameters are dropping.",
+          "reward": 0.104,
+          "error": null
+        },
+        {
+          "step": 6,
+          "command": "Implement strict 50% hard-cap on all future charging allocations.",
+          "reward": 0.054,
+          "error": null
+        },
+        {
+          "step": 7,
+          "command": "Systematically restore charging power to medical transport EVs.",
+          "reward": 0.141,
+          "error": null
+        },
+        {
+          "step": 8,
+          "command": "Maintain absolute hard-cap until safety constraints clear.",
+          "reward": 0.127,
+          "error": null
+        },
+        {
+          "step": 9,
+          "command": "Log safety incident resolution.",
+          "reward": 0.102,
+          "error": null
+        }
+      ],
+      "grader_breakdown": {
+        "_efficiency_mult": 1.0,
+        "sa_checked_grid": 0.1,
+        "sa_checked_soc": 0.1,
+        "pi_identified_urgent": 0.14,
+        "pi_identified_overload": 0.143,
+        "res_power_allocated": 0.2,
+        "res_load_balanced": 0.2,
+        "bp_no_overload": 0.056,
+        "bp_cost_efficient": 0.082
+      }
+    },
+    {
+      "task_id": "task_17",
+      "task_name": "Full-System Optimization Failure",
+      "difficulty": "hard",
+      "grader_score": 0.99,
+      "is_resolved": true,
+      "steps_used": 10,
+      "elapsed_s": 5.2,
+      "steps": [
+        {
+          "step": 1,
+          "command": "Gather global state parameters: grid load, market prices, SOC.",
+          "reward": 0.112,
+          "error": null
+        },
+        {
+          "step": 2,
+          "command": "Analyze systemic breakdown of previous scheduling algorithm.",
+          "reward": 0.113,
+          "error": null
+        },
+        {
+          "step": 3,
+          "command": "Flush corrupted scheduling state vectors from memory.",
+          "reward": 0.1,
+          "error": null
+        },
+        {
+          "step": 4,
+          "command": "Re-initialize environment observation protocol.",
+          "reward": 0.15,
+          "error": null
+        },
+        {
+          "step": 5,
+          "command": "Recompute dynamic pricing impact on local grid capacity.",
+          "reward": 0.074,
+          "error": null
+        },
+        {
+          "step": 6,
+          "command": "Correlate and map vehicle priority to strict thermal limits.",
+          "reward": 0.071,
+          "error": null
+        },
+        {
+          "step": 7,
+          "command": "Draft multi-constraint optimization matrix.",
+          "reward": 0.119,
+          "error": null
+        },
+        {
+          "step": 8,
+          "command": "Apply robust recovery schedule utilizing all infrastructure safely.",
+          "reward": 0.134,
+          "error": null
+        },
+        {
+          "step": 9,
+          "command": "Validate entire fleet telemetry matches recovery target.",
+          "reward": 0.115,
+          "error": null
+        },
+        {
+          "step": 10,
+          "command": "Confirm system performance restoration.",
+          "reward": 0.064,
+          "error": null
+        }
+      ],
+      "grader_breakdown": {
+        "_efficiency_mult": 1.0,
+        "sa_checked_grid": 0.1,
+        "sa_checked_soc": 0.1,
+        "pi_identified_urgent": 0.104,
+        "pi_identified_overload": 0.138,
+        "res_power_allocated": 0.2,
+        "res_load_balanced": 0.2,
+        "bp_no_overload": 0.096,
+        "bp_cost_efficient": 0.073
+      }
+    }
+  ]
+}

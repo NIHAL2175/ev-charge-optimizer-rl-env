@@ -1,0 +1,1166 @@
+{
+  "model": "A2C Agent",
+  "summary": {
+    "total_score": 11.6
+  },
+  "results": [
+    {
+      "task_id": "task_1",
+      "task_name": "Peak Demand Surge",
+      "difficulty": "easy",
+      "grader_score": 0.672,
+      "is_resolved": false,
+      "steps_used": 9,
+      "elapsed_s": 4.6,
+      "steps": [
+        {
+          "step": 1,
+          "command": "Read smart meter data for main grid feed.",
+          "reward": 0.052,
+          "error": null
+        },
+        {
+          "step": 2,
+          "command": "Detect aggregate load exceeding 95% capacity on transformer A.",
+          "reward": 0.046,
+          "error": null
+        },
+        {
+          "step": 3,
+          "command": "Query connected EVs and their current power draw.",
+          "reward": 0.029,
+          "error": null
+        },
+        {
+          "step": 4,
+          "command": "Categorize active charging sessions by priority and deadline.",
+          "reward": 0.055,
+          "error": null
+        },
+        {
+          "step": 5,
+          "command": "Identify EV-4 and EV-7 as low priority with departure > 8h.",
+          "reward": 0.065,
+          "error": null
+        },
+        {
+          "step": 6,
+          "command": "Throttle power delivery to EV-4 and EV-7 to 3kW.",
+          "reward": 0.078,
+          "error": null
+        },
+        {
+          "step": 7,
+          "command": "Attempt standard assignment without deep optimization.",
+          "reward": 0.057,
+          "error": null
+        },
+        {
+          "step": 8,
+          "command": "Suboptimal grid allocation executed.",
+          "reward": -0.05,
+          "error": "Warning: Slight inefficiency detected"
+        },
+        {
+          "step": 9,
+          "command": "Commit new dynamic charging schedule to controllers.",
+          "reward": 0.046,
+          "error": null
+        }
+      ],
+      "grader_breakdown": {
+        "_efficiency_mult": 0.7,
+        "sa_checked_grid": 0.1,
+        "sa_checked_soc": 0.1,
+        "pi_identified_urgent": 0.118,
+        "pi_identified_overload": 0.101,
+        "res_power_allocated": 0.05
+      }
+    },
+    {
+      "task_id": "task_2",
+      "task_name": "Critical Battery Neglect",
+      "difficulty": "easy",
+      "grader_score": 0.729,
+      "is_resolved": true,
+      "steps_used": 8,
+      "elapsed_s": 3.6,
+      "steps": [
+        {
+          "step": 1,
+          "command": "Fetch SOC arrays for all connected vehicles.",
+          "reward": 0.037,
+          "error": null
+        },
+        {
+          "step": 2,
+          "command": "Query departure times for active sessions.",
+          "reward": 0.055,
+          "error": null
+        },
+        {
+          "step": 3,
+          "command": "Compare remaining charge time against departure constraints.",
+          "reward": 0.027,
+          "error": null
+        },
+        {
+          "step": 4,
+          "command": "Identify EV-12 and EV-05 clustered below 20% SOC.",
+          "reward": 0.011,
+          "error": null
+        },
+        {
+          "step": 5,
+          "command": "Detect uniform power allocation failing to address urgency.",
+          "reward": 0.066,
+          "error": null
+        },
+        {
+          "step": 6,
+          "command": "Attempt standard assignment without deep optimization.",
+          "reward": 0.049,
+          "error": null
+        },
+        {
+          "step": 7,
+          "command": "Suboptimal grid allocation executed.",
+          "reward": -0.05,
+          "error": "Warning: Slight inefficiency detected"
+        },
+        {
+          "step": 8,
+          "command": "Verify updated projections meet departure deadlines.",
+          "reward": 0.028,
+          "error": null
+        }
+      ],
+      "grader_breakdown": {
+        "_efficiency_mult": 0.7,
+        "sa_checked_grid": 0.1,
+        "sa_checked_soc": 0.1,
+        "pi_identified_urgent": 0.104,
+        "pi_identified_overload": 0.142,
+        "res_power_allocated": 0.2,
+        "res_load_balanced": 0.2,
+        "bp_no_overload": 0.081,
+        "bp_cost_efficient": 0.081
+      }
+    },
+    {
+      "task_id": "task_3",
+      "task_name": "Uniform Allocation Inefficiency",
+      "difficulty": "easy",
+      "grader_score": 0.59,
+      "is_resolved": false,
+      "steps_used": 8,
+      "elapsed_s": 3.7,
+      "steps": [
+        {
+          "step": 1,
+          "command": "Analyze current power distribution matrix across all chargers.",
+          "reward": 0.051,
+          "error": null
+        },
+        {
+          "step": 2,
+          "command": "Query individual EV battery charge acceptance curves.",
+          "reward": 0.073,
+          "error": null
+        },
+        {
+          "step": 3,
+          "command": "Detect uniform 11kW allocation across all active nodes.",
+          "reward": 0.019,
+          "error": null
+        },
+        {
+          "step": 4,
+          "command": "Identify that EV-2 is tapering at 4kW but allocated 11kW.",
+          "reward": 0.016,
+          "error": null
+        },
+        {
+          "step": 5,
+          "command": "Identify EV-9 requires 22kW but is bottlenecked at 11kW.",
+          "reward": 0.016,
+          "error": null
+        },
+        {
+          "step": 6,
+          "command": "Attempt standard assignment without deep optimization.",
+          "reward": 0.065,
+          "error": null
+        },
+        {
+          "step": 7,
+          "command": "Suboptimal grid allocation executed.",
+          "reward": -0.05,
+          "error": "Warning: Slight inefficiency detected"
+        },
+        {
+          "step": 8,
+          "command": "Log increased overall system charging efficiency.",
+          "reward": 0.07,
+          "error": null
+        }
+      ],
+      "grader_breakdown": {
+        "_efficiency_mult": 0.7,
+        "sa_checked_grid": 0.1,
+        "sa_checked_soc": 0.1,
+        "res_power_allocated": 0.05
+      }
+    },
+    {
+      "task_id": "task_4",
+      "task_name": "Idle Infrastructure Waste",
+      "difficulty": "easy",
+      "grader_score": 0.56,
+      "is_resolved": false,
+      "steps_used": 8,
+      "elapsed_s": 3.1,
+      "steps": [
+        {
+          "step": 1,
+          "command": "List waiting vehicles in the virtual queue.",
+          "reward": 0.074,
+          "error": null
+        },
+        {
+          "step": 2,
+          "command": "Check idle status and health of all charging points.",
+          "reward": 0.045,
+          "error": null
+        },
+        {
+          "step": 3,
+          "command": "Detect 3 available charging stations (Station 2, 5, 8).",
+          "reward": 0.026,
+          "error": null
+        },
+        {
+          "step": 4,
+          "command": "Cross-reference waiting EVs compatibility and priority.",
+          "reward": 0.057,
+          "error": null
+        },
+        {
+          "step": 5,
+          "command": "Initialize pre-conditioning for waiting EV-6 battery.",
+          "reward": 0.034,
+          "error": null
+        },
+        {
+          "step": 6,
+          "command": "Attempt standard assignment without deep optimization.",
+          "reward": 0.018,
+          "error": null
+        },
+        {
+          "step": 7,
+          "command": "Suboptimal grid allocation executed.",
+          "reward": -0.05,
+          "error": "Warning: Slight inefficiency detected"
+        },
+        {
+          "step": 8,
+          "command": "Confirm active power draw and clear the waitlist.",
+          "reward": 0.058,
+          "error": null
+        }
+      ],
+      "grader_breakdown": {
+        "_efficiency_mult": 0.7,
+        "sa_checked_grid": 0.1,
+        "sa_checked_soc": 0.1,
+        "res_power_allocated": 0.05
+      }
+    },
+    {
+      "task_id": "task_5",
+      "task_name": "Missed Charging Deadlines",
+      "difficulty": "easy",
+      "grader_score": 0.566,
+      "is_resolved": false,
+      "steps_used": 8,
+      "elapsed_s": 2.1,
+      "steps": [
+        {
+          "step": 1,
+          "command": "Query scheduled departure deadlines for pending EVs.",
+          "reward": 0.03,
+          "error": null
+        },
+        {
+          "step": 2,
+          "command": "Calculate discrepancy between current SOC and required target.",
+          "reward": 0.041,
+          "error": null
+        },
+        {
+          "step": 3,
+          "command": "Identify 4 vehicles tracing significantly behind schedule.",
+          "reward": 0.06,
+          "error": null
+        },
+        {
+          "step": 4,
+          "command": "Analyze current charging rate limits constraint.",
+          "reward": 0.037,
+          "error": null
+        },
+        {
+          "step": 5,
+          "command": "Execute deadline-aware scheduling priority override.",
+          "reward": 0.016,
+          "error": null
+        },
+        {
+          "step": 6,
+          "command": "Attempt standard assignment without deep optimization.",
+          "reward": 0.01,
+          "error": null
+        },
+        {
+          "step": 7,
+          "command": "Suboptimal grid allocation executed.",
+          "reward": -0.05,
+          "error": "Warning: Slight inefficiency detected"
+        },
+        {
+          "step": 8,
+          "command": "Verify new ETA trajectory matches departure timeline.",
+          "reward": 0.042,
+          "error": null
+        }
+      ],
+      "grader_breakdown": {
+        "_efficiency_mult": 0.7,
+        "sa_checked_grid": 0.1,
+        "sa_checked_soc": 0.1,
+        "res_power_allocated": 0.05
+      }
+    },
+    {
+      "task_id": "task_6",
+      "task_name": "Tariff-Aware Failure",
+      "difficulty": "medium",
+      "grader_score": 0.572,
+      "is_resolved": false,
+      "steps_used": 8,
+      "elapsed_s": 3.1,
+      "steps": [
+        {
+          "step": 1,
+          "command": "Fetch real-time wholesale electricity prices.",
+          "reward": 0.033,
+          "error": null
+        },
+        {
+          "step": 2,
+          "command": "Cross-reference current time with time-of-use (TOU) tariff schedule.",
+          "reward": 0.079,
+          "error": null
+        },
+        {
+          "step": 3,
+          "command": "Identify system is currently operating in peak pricing window.",
+          "reward": 0.049,
+          "error": null
+        },
+        {
+          "step": 4,
+          "command": "Analyze flexible load potential among charging fleet.",
+          "reward": 0.073,
+          "error": null
+        },
+        {
+          "step": 5,
+          "command": "Suspend charging for 6 vehicles with high flexibility.",
+          "reward": 0.058,
+          "error": null
+        },
+        {
+          "step": 6,
+          "command": "Attempt standard assignment without deep optimization.",
+          "reward": 0.077,
+          "error": null
+        },
+        {
+          "step": 7,
+          "command": "Suboptimal grid allocation executed.",
+          "reward": -0.05,
+          "error": "Warning: Slight inefficiency detected"
+        },
+        {
+          "step": 8,
+          "command": "Resume necessary charge profiles at minimum sustaining rate.",
+          "reward": 0.053,
+          "error": null
+        }
+      ],
+      "grader_breakdown": {
+        "_efficiency_mult": 0.7,
+        "sa_checked_grid": 0.1,
+        "sa_checked_soc": 0.1,
+        "res_power_allocated": 0.05
+      }
+    },
+    {
+      "task_id": "task_7",
+      "task_name": "Capacity Threshold Breach",
+      "difficulty": "medium",
+      "grader_score": 0.769,
+      "is_resolved": true,
+      "steps_used": 8,
+      "elapsed_s": 4.2,
+      "steps": [
+        {
+          "step": 1,
+          "command": "Continuously monitor localized sub-station phase loads.",
+          "reward": 0.045,
+          "error": null
+        },
+        {
+          "step": 2,
+          "command": "Detect grid capacity threshold breached (105% utilization).",
+          "reward": 0.071,
+          "error": null
+        },
+        {
+          "step": 3,
+          "command": "Trigger immediate protective load shedding protocol.",
+          "reward": 0.05,
+          "error": null
+        },
+        {
+          "step": 4,
+          "command": "Instruct all active chargers to drop load by 20%.",
+          "reward": 0.048,
+          "error": null
+        },
+        {
+          "step": 5,
+          "command": "Re-evaluate phase balance after emergency drop.",
+          "reward": 0.08,
+          "error": null
+        },
+        {
+          "step": 6,
+          "command": "Attempt standard assignment without deep optimization.",
+          "reward": 0.027,
+          "error": null
+        },
+        {
+          "step": 7,
+          "command": "Suboptimal grid allocation executed.",
+          "reward": -0.05,
+          "error": "Warning: Slight inefficiency detected"
+        },
+        {
+          "step": 8,
+          "command": "Resubmit optimized schedules under strict capacity ceiling.",
+          "reward": 0.079,
+          "error": null
+        }
+      ],
+      "grader_breakdown": {
+        "_efficiency_mult": 0.7,
+        "sa_checked_grid": 0.1,
+        "sa_checked_soc": 0.1,
+        "pi_identified_urgent": 0.141,
+        "pi_identified_overload": 0.107,
+        "res_power_allocated": 0.2,
+        "res_load_balanced": 0.2,
+        "bp_no_overload": 0.059,
+        "bp_cost_efficient": 0.052
+      }
+    },
+    {
+      "task_id": "task_8",
+      "task_name": "Priority Inversion Issue",
+      "difficulty": "medium",
+      "grader_score": 0.631,
+      "is_resolved": false,
+      "steps_used": 8,
+      "elapsed_s": 1.7,
+      "steps": [
+        {
+          "step": 1,
+          "command": "Review active priority queue matrix and output states.",
+          "reward": 0.013,
+          "error": null
+        },
+        {
+          "step": 2,
+          "command": "Compare assigned power levels against urgency tags.",
+          "reward": 0.068,
+          "error": null
+        },
+        {
+          "step": 3,
+          "command": "Detect non-critical EV-3 receiving 22kW.",
+          "reward": 0.027,
+          "error": null
+        },
+        {
+          "step": 4,
+          "command": "Detect high-priority ambulance EV-1 bottlenecked at 7kW.",
+          "reward": 0.079,
+          "error": null
+        },
+        {
+          "step": 5,
+          "command": "Identify logical inversion in ruleset evaluation.",
+          "reward": 0.011,
+          "error": null
+        },
+        {
+          "step": 6,
+          "command": "Attempt standard assignment without deep optimization.",
+          "reward": 0.035,
+          "error": null
+        },
+        {
+          "step": 7,
+          "command": "Suboptimal grid allocation executed.",
+          "reward": -0.05,
+          "error": "Warning: Slight inefficiency detected"
+        },
+        {
+          "step": 8,
+          "command": "Confirm expected flow rates via telemetry.",
+          "reward": 0.011,
+          "error": null
+        }
+      ],
+      "grader_breakdown": {
+        "_efficiency_mult": 0.7,
+        "sa_checked_grid": 0.1,
+        "sa_checked_soc": 0.1,
+        "pi_identified_urgent": 0.102,
+        "pi_identified_overload": 0.112,
+        "res_power_allocated": 0.05
+      }
+    },
+    {
+      "task_id": "task_9",
+      "task_name": "Queue Scheduling Breakdown",
+      "difficulty": "medium",
+      "grader_score": 0.752,
+      "is_resolved": true,
+      "steps_used": 8,
+      "elapsed_s": 2.0,
+      "steps": [
+        {
+          "step": 1,
+          "command": "Audit the queue sequence log and arrival timestamps.",
+          "reward": 0.054,
+          "error": null
+        },
+        {
+          "step": 2,
+          "command": "Compare queue order against SOC urgency and deadlines.",
+          "reward": 0.043,
+          "error": null
+        },
+        {
+          "step": 3,
+          "command": "Detect First-In-First-Out (FIFO) causing critical delays.",
+          "reward": 0.045,
+          "error": null
+        },
+        {
+          "step": 4,
+          "command": "Suspend standard FIFO assignment logic.",
+          "reward": 0.028,
+          "error": null
+        },
+        {
+          "step": 5,
+          "command": "Implement Earliest Deadline First (EDF) sorting matrix.",
+          "reward": 0.029,
+          "error": null
+        },
+        {
+          "step": 6,
+          "command": "Attempt standard assignment without deep optimization.",
+          "reward": 0.044,
+          "error": null
+        },
+        {
+          "step": 7,
+          "command": "Suboptimal grid allocation executed.",
+          "reward": -0.05,
+          "error": "Warning: Slight inefficiency detected"
+        },
+        {
+          "step": 8,
+          "command": "Verify queue stability and expected wait times.",
+          "reward": 0.027,
+          "error": null
+        }
+      ],
+      "grader_breakdown": {
+        "_efficiency_mult": 0.7,
+        "sa_checked_grid": 0.1,
+        "sa_checked_soc": 0.1,
+        "pi_identified_urgent": 0.124,
+        "pi_identified_overload": 0.127,
+        "res_power_allocated": 0.2,
+        "res_load_balanced": 0.2,
+        "bp_no_overload": 0.073,
+        "bp_cost_efficient": 0.059
+      }
+    },
+    {
+      "task_id": "task_10",
+      "task_name": "Load Distribution Imbalance",
+      "difficulty": "medium",
+      "grader_score": 0.714,
+      "is_resolved": true,
+      "steps_used": 8,
+      "elapsed_s": 4.2,
+      "steps": [
+        {
+          "step": 1,
+          "command": "Measure power draw metrics across physical charging nodes.",
+          "reward": 0.037,
+          "error": null
+        },
+        {
+          "step": 2,
+          "command": "Detect severe load concentration on Phase A circuits.",
+          "reward": 0.071,
+          "error": null
+        },
+        {
+          "step": 3,
+          "command": "Identify Phase B and C circuits operating under 30% load.",
+          "reward": 0.041,
+          "error": null
+        },
+        {
+          "step": 4,
+          "command": "Analyze phase-switching capabilities of active EVSEs.",
+          "reward": 0.057,
+          "error": null
+        },
+        {
+          "step": 5,
+          "command": "Command EVSE-4 and EVSE-7 to transition to Phase B.",
+          "reward": 0.062,
+          "error": null
+        },
+        {
+          "step": 6,
+          "command": "Attempt standard assignment without deep optimization.",
+          "reward": 0.065,
+          "error": null
+        },
+        {
+          "step": 7,
+          "command": "Suboptimal grid allocation executed.",
+          "reward": -0.05,
+          "error": "Warning: Slight inefficiency detected"
+        },
+        {
+          "step": 8,
+          "command": "Commit balanced distribution profile.",
+          "reward": 0.022,
+          "error": null
+        }
+      ],
+      "grader_breakdown": {
+        "_efficiency_mult": 0.7,
+        "sa_checked_grid": 0.1,
+        "sa_checked_soc": 0.1,
+        "pi_identified_urgent": 0.141,
+        "pi_identified_overload": 0.119,
+        "res_power_allocated": 0.2,
+        "res_load_balanced": 0.2,
+        "bp_no_overload": 0.05,
+        "bp_cost_efficient": 0.054
+      }
+    },
+    {
+      "task_id": "task_11",
+      "task_name": "Demand Spike Mismanagement",
+      "difficulty": "medium",
+      "grader_score": 0.597,
+      "is_resolved": false,
+      "steps_used": 8,
+      "elapsed_s": 4.5,
+      "steps": [
+        {
+          "step": 1,
+          "command": "Trace sudden influx of 15 simultaneous charging requests.",
+          "reward": 0.041,
+          "error": null
+        },
+        {
+          "step": 2,
+          "command": "Analyze initial system response and power allocation.",
+          "reward": 0.078,
+          "error": null
+        },
+        {
+          "step": 3,
+          "command": "Detect rapid oscillation and overload warnings triggering.",
+          "reward": 0.056,
+          "error": null
+        },
+        {
+          "step": 4,
+          "command": "Reject uniform power startup for all 15 vehicles.",
+          "reward": 0.025,
+          "error": null
+        },
+        {
+          "step": 5,
+          "command": "Stage admissions in batches of 5 vehicles every 2 minutes.",
+          "reward": 0.04,
+          "error": null
+        },
+        {
+          "step": 6,
+          "command": "Attempt standard assignment without deep optimization.",
+          "reward": 0.078,
+          "error": null
+        },
+        {
+          "step": 7,
+          "command": "Suboptimal grid allocation executed.",
+          "reward": -0.05,
+          "error": "Warning: Slight inefficiency detected"
+        },
+        {
+          "step": 8,
+          "command": "Stabilize entire fleet within grid constraints.",
+          "reward": 0.067,
+          "error": null
+        }
+      ],
+      "grader_breakdown": {
+        "_efficiency_mult": 0.7,
+        "sa_checked_grid": 0.1,
+        "sa_checked_soc": 0.1,
+        "res_power_allocated": 0.05
+      }
+    },
+    {
+      "task_id": "task_12",
+      "task_name": "Renewable Energy Neglect",
+      "difficulty": "hard",
+      "grader_score": 0.589,
+      "is_resolved": false,
+      "steps_used": 8,
+      "elapsed_s": 5.5,
+      "steps": [
+        {
+          "step": 1,
+          "command": "Query local real-time solar PV generation output telemetry.",
+          "reward": 0.066,
+          "error": null
+        },
+        {
+          "step": 2,
+          "command": "Compare PV generation against building load and EV demand.",
+          "reward": 0.028,
+          "error": null
+        },
+        {
+          "step": 3,
+          "command": "Identify 50kW of excess solar generation being exported.",
+          "reward": 0.05,
+          "error": null
+        },
+        {
+          "step": 4,
+          "command": "Detect EVs charging from grid power unnecessarily.",
+          "reward": 0.046,
+          "error": null
+        },
+        {
+          "step": 5,
+          "command": "Synchronize EV charging setpoints directly to PV output curve.",
+          "reward": 0.074,
+          "error": null
+        },
+        {
+          "step": 6,
+          "command": "Attempt standard assignment without deep optimization.",
+          "reward": 0.075,
+          "error": null
+        },
+        {
+          "step": 7,
+          "command": "Suboptimal grid allocation executed.",
+          "reward": -0.05,
+          "error": "Warning: Slight inefficiency detected"
+        },
+        {
+          "step": 8,
+          "command": "Monitor and log carbon intensity reduction.",
+          "reward": 0.063,
+          "error": null
+        }
+      ],
+      "grader_breakdown": {
+        "_efficiency_mult": 0.7,
+        "sa_checked_grid": 0.1,
+        "sa_checked_soc": 0.1,
+        "res_power_allocated": 0.05
+      }
+    },
+    {
+      "task_id": "task_13",
+      "task_name": "Optimization Trade-off Conflict",
+      "difficulty": "hard",
+      "grader_score": 0.826,
+      "is_resolved": true,
+      "steps_used": 8,
+      "elapsed_s": 2.7,
+      "steps": [
+        {
+          "step": 1,
+          "command": "Evaluate cost, SOC urgency, and grid capacity constraints.",
+          "reward": 0.05,
+          "error": null
+        },
+        {
+          "step": 2,
+          "command": "Compute Pareto optimal frontier for the current scenario.",
+          "reward": 0.062,
+          "error": null
+        },
+        {
+          "step": 3,
+          "command": "Identify conflicting objectives: Urgent charging vs Peak tariff.",
+          "reward": 0.028,
+          "error": null
+        },
+        {
+          "step": 4,
+          "command": "Apply multi-objective optimization weighting factors.",
+          "reward": 0.051,
+          "error": null
+        },
+        {
+          "step": 5,
+          "command": "Accept medium tariff penalty to satisfy critical SOC deadlines.",
+          "reward": 0.047,
+          "error": null
+        },
+        {
+          "step": 6,
+          "command": "Attempt standard assignment without deep optimization.",
+          "reward": 0.018,
+          "error": null
+        },
+        {
+          "step": 7,
+          "command": "Suboptimal grid allocation executed.",
+          "reward": -0.05,
+          "error": "Warning: Slight inefficiency detected"
+        },
+        {
+          "step": 8,
+          "command": "Finalize balanced trade-off execution.",
+          "reward": 0.045,
+          "error": null
+        }
+      ],
+      "grader_breakdown": {
+        "_efficiency_mult": 0.7,
+        "sa_checked_grid": 0.1,
+        "sa_checked_soc": 0.1,
+        "pi_identified_urgent": 0.133,
+        "pi_identified_overload": 0.142,
+        "res_power_allocated": 0.2,
+        "res_load_balanced": 0.2,
+        "bp_no_overload": 0.085,
+        "bp_cost_efficient": 0.064
+      }
+    },
+    {
+      "task_id": "task_14",
+      "task_name": "Charging Instability Oscillation",
+      "difficulty": "hard",
+      "grader_score": 0.623,
+      "is_resolved": false,
+      "steps_used": 8,
+      "elapsed_s": 3.1,
+      "steps": [
+        {
+          "step": 1,
+          "command": "Monitor high-frequency charging rate variance across nodes.",
+          "reward": 0.018,
+          "error": null
+        },
+        {
+          "step": 2,
+          "command": "Analyze power allocation logs over the trailing 15 minutes.",
+          "reward": 0.049,
+          "error": null
+        },
+        {
+          "step": 3,
+          "command": "Detect severe rate oscillation between 0kW and 22kW.",
+          "reward": 0.043,
+          "error": null
+        },
+        {
+          "step": 4,
+          "command": "Identify unstable control loop lacking hysteresis.",
+          "reward": 0.032,
+          "error": null
+        },
+        {
+          "step": 5,
+          "command": "Apply smoothing filter algorithms to the charging commands.",
+          "reward": 0.066,
+          "error": null
+        },
+        {
+          "step": 6,
+          "command": "Attempt standard assignment without deep optimization.",
+          "reward": 0.02,
+          "error": null
+        },
+        {
+          "step": 7,
+          "command": "Suboptimal grid allocation executed.",
+          "reward": -0.05,
+          "error": "Warning: Slight inefficiency detected"
+        },
+        {
+          "step": 8,
+          "command": "Validate stabilized output rates via hardware telemetry.",
+          "reward": 0.075,
+          "error": null
+        }
+      ],
+      "grader_breakdown": {
+        "_efficiency_mult": 0.7,
+        "sa_checked_grid": 0.1,
+        "sa_checked_soc": 0.1,
+        "pi_identified_urgent": 0.122,
+        "pi_identified_overload": 0.114,
+        "res_power_allocated": 0.05
+      }
+    },
+    {
+      "task_id": "task_15",
+      "task_name": "Cost Accumulation Drift",
+      "difficulty": "hard",
+      "grader_score": 0.824,
+      "is_resolved": true,
+      "steps_used": 8,
+      "elapsed_s": 3.7,
+      "steps": [
+        {
+          "step": 1,
+          "command": "Audit long-term electricity expenditure over 30 days.",
+          "reward": 0.027,
+          "error": null
+        },
+        {
+          "step": 2,
+          "command": "Correlate daily spending peaks with charging schedules.",
+          "reward": 0.01,
+          "error": null
+        },
+        {
+          "step": 3,
+          "command": "Identify inefficient long-term scheduling relying on peak windows.",
+          "reward": 0.036,
+          "error": null
+        },
+        {
+          "step": 4,
+          "command": "Forecast energy requirements for the next 24-hour cycle.",
+          "reward": 0.028,
+          "error": null
+        },
+        {
+          "step": 5,
+          "command": "Compute optimized charging curve based on forecasted tariffs.",
+          "reward": 0.03,
+          "error": null
+        },
+        {
+          "step": 6,
+          "command": "Attempt standard assignment without deep optimization.",
+          "reward": 0.059,
+          "error": null
+        },
+        {
+          "step": 7,
+          "command": "Suboptimal grid allocation executed.",
+          "reward": -0.05,
+          "error": "Warning: Slight inefficiency detected"
+        },
+        {
+          "step": 8,
+          "command": "Project net savings over the next fiscal quarter.",
+          "reward": 0.01,
+          "error": null
+        }
+      ],
+      "grader_breakdown": {
+        "_efficiency_mult": 0.7,
+        "sa_checked_grid": 0.1,
+        "sa_checked_soc": 0.1,
+        "pi_identified_urgent": 0.145,
+        "pi_identified_overload": 0.142,
+        "res_power_allocated": 0.2,
+        "res_load_balanced": 0.2,
+        "bp_no_overload": 0.095,
+        "bp_cost_efficient": 0.07
+      }
+    },
+    {
+      "task_id": "task_16",
+      "task_name": "Safety Constraint Violation",
+      "difficulty": "hard",
+      "grader_score": 0.706,
+      "is_resolved": true,
+      "steps_used": 8,
+      "elapsed_s": 2.3,
+      "steps": [
+        {
+          "step": 1,
+          "command": "Ingest emergency alerts from grid monitoring relays.",
+          "reward": 0.074,
+          "error": null
+        },
+        {
+          "step": 2,
+          "command": "Detect critical physical infrastructure thermal thresholds breached.",
+          "reward": 0.019,
+          "error": null
+        },
+        {
+          "step": 3,
+          "command": "Override all software-defined charging optimization schedules.",
+          "reward": 0.033,
+          "error": null
+        },
+        {
+          "step": 4,
+          "command": "Initiate immediate hardware-level load curtailment to 0kW.",
+          "reward": 0.044,
+          "error": null
+        },
+        {
+          "step": 5,
+          "command": "Verify transformer cooling parameters are dropping.",
+          "reward": 0.067,
+          "error": null
+        },
+        {
+          "step": 6,
+          "command": "Attempt standard assignment without deep optimization.",
+          "reward": 0.021,
+          "error": null
+        },
+        {
+          "step": 7,
+          "command": "Suboptimal grid allocation executed.",
+          "reward": -0.05,
+          "error": "Warning: Slight inefficiency detected"
+        },
+        {
+          "step": 8,
+          "command": "Log safety incident resolution.",
+          "reward": 0.046,
+          "error": null
+        }
+      ],
+      "grader_breakdown": {
+        "_efficiency_mult": 0.7,
+        "sa_checked_grid": 0.1,
+        "sa_checked_soc": 0.1,
+        "pi_identified_urgent": 0.141,
+        "pi_identified_overload": 0.126,
+        "res_power_allocated": 0.2,
+        "res_load_balanced": 0.2,
+        "bp_no_overload": 0.055,
+        "bp_cost_efficient": 0.099
+      }
+    },
+    {
+      "task_id": "task_17",
+      "task_name": "Full-System Optimization Failure",
+      "difficulty": "hard",
+      "grader_score": 0.565,
+      "is_resolved": false,
+      "steps_used": 9,
+      "elapsed_s": 3.1,
+      "steps": [
+        {
+          "step": 1,
+          "command": "Gather global state parameters: grid load, market prices, SOC.",
+          "reward": 0.034,
+          "error": null
+        },
+        {
+          "step": 2,
+          "command": "Analyze systemic breakdown of previous scheduling algorithm.",
+          "reward": 0.012,
+          "error": null
+        },
+        {
+          "step": 3,
+          "command": "Flush corrupted scheduling state vectors from memory.",
+          "reward": 0.042,
+          "error": null
+        },
+        {
+          "step": 4,
+          "command": "Re-initialize environment observation protocol.",
+          "reward": 0.045,
+          "error": null
+        },
+        {
+          "step": 5,
+          "command": "Recompute dynamic pricing impact on local grid capacity.",
+          "reward": 0.067,
+          "error": null
+        },
+        {
+          "step": 6,
+          "command": "Correlate and map vehicle priority to strict thermal limits.",
+          "reward": 0.058,
+          "error": null
+        },
+        {
+          "step": 7,
+          "command": "Attempt standard assignment without deep optimization.",
+          "reward": 0.05,
+          "error": null
+        },
+        {
+          "step": 8,
+          "command": "Suboptimal grid allocation executed.",
+          "reward": -0.05,
+          "error": "Warning: Slight inefficiency detected"
+        },
+        {
+          "step": 9,
+          "command": "Confirm system performance restoration.",
+          "reward": 0.019,
+          "error": null
+        }
+      ],
+      "grader_breakdown": {
+        "_efficiency_mult": 0.7,
+        "sa_checked_grid": 0.1,
+        "sa_checked_soc": 0.1,
+        "res_power_allocated": 0.05
+      }
+    }
+  ]
+}

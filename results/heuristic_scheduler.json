@@ -1,0 +1,839 @@
+{
+  "model": "Heuristic Scheduler",
+  "summary": {
+    "total_score": 10.2
+  },
+  "results": [
+    {
+      "task_id": "task_1",
+      "task_name": "Peak Demand Surge",
+      "difficulty": "easy",
+      "grader_score": 0.491,
+      "is_resolved": false,
+      "steps_used": 5,
+      "elapsed_s": 3.9,
+      "steps": [
+        {
+          "step": 1,
+          "command": "Read smart meter data for main grid feed.",
+          "reward": 0.042,
+          "error": null
+        },
+        {
+          "step": 2,
+          "command": "Detect aggregate load exceeding 95% capacity on transformer A.",
+          "reward": 0.034,
+          "error": null
+        },
+        {
+          "step": 3,
+          "command": "Apply static rule-based scheduling limits.",
+          "reward": -0.05,
+          "error": "Suboptimal fixed rule applied"
+        },
+        {
+          "step": 4,
+          "command": "Distribute available power evenly among active EVs.",
+          "reward": -0.05,
+          "error": "Suboptimal fixed rule applied"
+        },
+        {
+          "step": 5,
+          "command": "Finalize heuristic schedule.",
+          "reward": 0.037,
+          "error": "Failed edge case constraint"
+        }
+      ],
+      "grader_breakdown": {
+        "_efficiency_mult": 1.0,
+        "sa_checked_grid": 0.1,
+        "sa_checked_soc": 0.1,
+        "res_power_allocated": 0.05
+      }
+    },
+    {
+      "task_id": "task_2",
+      "task_name": "Critical Battery Neglect",
+      "difficulty": "easy",
+      "grader_score": 0.723,
+      "is_resolved": true,
+      "steps_used": 5,
+      "elapsed_s": 2.1,
+      "steps": [
+        {
+          "step": 1,
+          "command": "Fetch SOC arrays for all connected vehicles.",
+          "reward": 0.027,
+          "error": null
+        },
+        {
+          "step": 2,
+          "command": "Query departure times for active sessions.",
+          "reward": 0.043,
+          "error": null
+        },
+        {
+          "step": 3,
+          "command": "Apply static rule-based scheduling limits.",
+          "reward": -0.05,
+          "error": "Suboptimal fixed rule applied"
+        },
+        {
+          "step": 4,
+          "command": "Distribute available power evenly among active EVs.",
+          "reward": -0.05,
+          "error": "Suboptimal fixed rule applied"
+        },
+        {
+          "step": 5,
+          "command": "Finalize heuristic schedule.",
+          "reward": 0.038,
+          "error": null
+        }
+      ],
+      "grader_breakdown": {
+        "_efficiency_mult": 1.0,
+        "sa_checked_grid": 0.1,
+        "sa_checked_soc": 0.1,
+        "pi_identified_urgent": 0.144,
+        "pi_identified_overload": 0.129,
+        "res_power_allocated": 0.2,
+        "res_load_balanced": 0.2,
+        "bp_no_overload": 0.076,
+        "bp_cost_efficient": 0.099
+      }
+    },
+    {
+      "task_id": "task_3",
+      "task_name": "Uniform Allocation Inefficiency",
+      "difficulty": "easy",
+      "grader_score": 0.693,
+      "is_resolved": false,
+      "steps_used": 5,
+      "elapsed_s": 2.3,
+      "steps": [
+        {
+          "step": 1,
+          "command": "Analyze current power distribution matrix across all chargers.",
+          "reward": 0.017,
+          "error": null
+        },
+        {
+          "step": 2,
+          "command": "Query individual EV battery charge acceptance curves.",
+          "reward": 0.033,
+          "error": null
+        },
+        {
+          "step": 3,
+          "command": "Apply static rule-based scheduling limits.",
+          "reward": -0.05,
+          "error": "Suboptimal fixed rule applied"
+        },
+        {
+          "step": 4,
+          "command": "Distribute available power evenly among active EVs.",
+          "reward": -0.05,
+          "error": "Suboptimal fixed rule applied"
+        },
+        {
+          "step": 5,
+          "command": "Finalize heuristic schedule.",
+          "reward": 0.019,
+          "error": null
+        }
+      ],
+      "grader_breakdown": {
+        "_efficiency_mult": 1.0,
+        "sa_checked_grid": 0.1,
+        "sa_checked_soc": 0.1,
+        "pi_identified_urgent": 0.105,
+        "pi_identified_overload": 0.132,
+        "res_power_allocated": 0.05
+      }
+    },
+    {
+      "task_id": "task_4",
+      "task_name": "Idle Infrastructure Waste",
+      "difficulty": "easy",
+      "grader_score": 0.655,
+      "is_resolved": false,
+      "steps_used": 5,
+      "elapsed_s": 4.0,
+      "steps": [
+        {
+          "step": 1,
+          "command": "List waiting vehicles in the virtual queue.",
+          "reward": 0.023,
+          "error": null
+        },
+        {
+          "step": 2,
+          "command": "Check idle status and health of all charging points.",
+          "reward": 0.025,
+          "error": null
+        },
+        {
+          "step": 3,
+          "command": "Apply static rule-based scheduling limits.",
+          "reward": -0.05,
+          "error": "Suboptimal fixed rule applied"
+        },
+        {
+          "step": 4,
+          "command": "Distribute available power evenly among active EVs.",
+          "reward": -0.05,
+          "error": "Suboptimal fixed rule applied"
+        },
+        {
+          "step": 5,
+          "command": "Finalize heuristic schedule.",
+          "reward": 0.016,
+          "error": null
+        }
+      ],
+      "grader_breakdown": {
+        "_efficiency_mult": 1.0,
+        "sa_checked_grid": 0.1,
+        "sa_checked_soc": 0.1,
+        "pi_identified_urgent": 0.146,
+        "pi_identified_overload": 0.118,
+        "res_power_allocated": 0.05
+      }
+    },
+    {
+      "task_id": "task_5",
+      "task_name": "Missed Charging Deadlines",
+      "difficulty": "easy",
+      "grader_score": 0.494,
+      "is_resolved": false,
+      "steps_used": 5,
+      "elapsed_s": 1.6,
+      "steps": [
+        {
+          "step": 1,
+          "command": "Query scheduled departure deadlines for pending EVs.",
+          "reward": 0.013,
+          "error": null
+        },
+        {
+          "step": 2,
+          "command": "Calculate discrepancy between current SOC and required target.",
+          "reward": 0.033,
+          "error": null
+        },
+        {
+          "step": 3,
+          "command": "Apply static rule-based scheduling limits.",
+          "reward": -0.05,
+          "error": "Suboptimal fixed rule applied"
+        },
+        {
+          "step": 4,
+          "command": "Distribute available power evenly among active EVs.",
+          "reward": -0.05,
+          "error": "Suboptimal fixed rule applied"
+        },
+        {
+          "step": 5,
+          "command": "Finalize heuristic schedule.",
+          "reward": 0.016,
+          "error": "Failed edge case constraint"
+        }
+      ],
+      "grader_breakdown": {
+        "_efficiency_mult": 1.0,
+        "sa_checked_grid": 0.1,
+        "sa_checked_soc": 0.1,
+        "res_power_allocated": 0.05
+      }
+    },
+    {
+      "task_id": "task_6",
+      "task_name": "Tariff-Aware Failure",
+      "difficulty": "medium",
+      "grader_score": 0.498,
+      "is_resolved": false,
+      "steps_used": 5,
+      "elapsed_s": 2.2,
+      "steps": [
+        {
+          "step": 1,
+          "command": "Fetch real-time wholesale electricity prices.",
+          "reward": 0.013,
+          "error": null
+        },
+        {
+          "step": 2,
+          "command": "Cross-reference current time with time-of-use (TOU) tariff schedule.",
+          "reward": 0.035,
+          "error": null
+        },
+        {
+          "step": 3,
+          "command": "Apply static rule-based scheduling limits.",
+          "reward": -0.05,
+          "error": "Suboptimal fixed rule applied"
+        },
+        {
+          "step": 4,
+          "command": "Distribute available power evenly among active EVs.",
+          "reward": -0.05,
+          "error": "Suboptimal fixed rule applied"
+        },
+        {
+          "step": 5,
+          "command": "Finalize heuristic schedule.",
+          "reward": 0.031,
+          "error": "Failed edge case constraint"
+        }
+      ],
+      "grader_breakdown": {
+        "_efficiency_mult": 1.0,
+        "sa_checked_grid": 0.1,
+        "sa_checked_soc": 0.1,
+        "res_power_allocated": 0.05
+      }
+    },
+    {
+      "task_id": "task_7",
+      "task_name": "Capacity Threshold Breach",
+      "difficulty": "medium",
+      "grader_score": 0.671,
+      "is_resolved": false,
+      "steps_used": 5,
+      "elapsed_s": 4.3,
+      "steps": [
+        {
+          "step": 1,
+          "command": "Continuously monitor localized sub-station phase loads.",
+          "reward": 0.048,
+          "error": null
+        },
+        {
+          "step": 2,
+          "command": "Detect grid capacity threshold breached (105% utilization).",
+          "reward": 0.032,
+          "error": null
+        },
+        {
+          "step": 3,
+          "command": "Apply static rule-based scheduling limits.",
+          "reward": -0.05,
+          "error": "Suboptimal fixed rule applied"
+        },
+        {
+          "step": 4,
+          "command": "Distribute available power evenly among active EVs.",
+          "reward": -0.05,
+          "error": "Suboptimal fixed rule applied"
+        },
+        {
+          "step": 5,
+          "command": "Finalize heuristic schedule.",
+          "reward": 0.05,
+          "error": null
+        }
+      ],
+      "grader_breakdown": {
+        "_efficiency_mult": 1.0,
+        "sa_checked_grid": 0.1,
+        "sa_checked_soc": 0.1,
+        "pi_identified_urgent": 0.103,
+        "pi_identified_overload": 0.143,
+        "res_power_allocated": 0.05
+      }
+    },
+    {
+      "task_id": "task_8",
+      "task_name": "Priority Inversion Issue",
+      "difficulty": "medium",
+      "grader_score": 0.488,
+      "is_resolved": false,
+      "steps_used": 5,
+      "elapsed_s": 4.6,
+      "steps": [
+        {
+          "step": 1,
+          "command": "Review active priority queue matrix and output states.",
+          "reward": 0.011,
+          "error": null
+        },
+        {
+          "step": 2,
+          "command": "Compare assigned power levels against urgency tags.",
+          "reward": 0.023,
+          "error": null
+        },
+        {
+          "step": 3,
+          "command": "Apply static rule-based scheduling limits.",
+          "reward": -0.05,
+          "error": "Suboptimal fixed rule applied"
+        },
+        {
+          "step": 4,
+          "command": "Distribute available power evenly among active EVs.",
+          "reward": -0.05,
+          "error": "Suboptimal fixed rule applied"
+        },
+        {
+          "step": 5,
+          "command": "Finalize heuristic schedule.",
+          "reward": 0.046,
+          "error": "Failed edge case constraint"
+        }
+      ],
+      "grader_breakdown": {
+        "_efficiency_mult": 1.0,
+        "sa_checked_grid": 0.1,
+        "sa_checked_soc": 0.1,
+        "res_power_allocated": 0.05
+      }
+    },
+    {
+      "task_id": "task_9",
+      "task_name": "Queue Scheduling Breakdown",
+      "difficulty": "medium",
+      "grader_score": 0.718,
+      "is_resolved": true,
+      "steps_used": 5,
+      "elapsed_s": 3.7,
+      "steps": [
+        {
+          "step": 1,
+          "command": "Audit the queue sequence log and arrival timestamps.",
+          "reward": 0.031,
+          "error": null
+        },
+        {
+          "step": 2,
+          "command": "Compare queue order against SOC urgency and deadlines.",
+          "reward": 0.012,
+          "error": null
+        },
+        {
+          "step": 3,
+          "command": "Apply static rule-based scheduling limits.",
+          "reward": -0.05,
+          "error": "Suboptimal fixed rule applied"
+        },
+        {
+          "step": 4,
+          "command": "Distribute available power evenly among active EVs.",
+          "reward": -0.05,
+          "error": "Suboptimal fixed rule applied"
+        },
+        {
+          "step": 5,
+          "command": "Finalize heuristic schedule.",
+          "reward": 0.021,
+          "error": null
+        }
+      ],
+      "grader_breakdown": {
+        "_efficiency_mult": 1.0,
+        "sa_checked_grid": 0.1,
+        "sa_checked_soc": 0.1,
+        "pi_identified_urgent": 0.107,
+        "pi_identified_overload": 0.116,
+        "res_power_allocated": 0.2,
+        "res_load_balanced": 0.2,
+        "bp_no_overload": 0.068,
+        "bp_cost_efficient": 0.091
+      }
+    },
+    {
+      "task_id": "task_10",
+      "task_name": "Load Distribution Imbalance",
+      "difficulty": "medium",
+      "grader_score": 0.7,
+      "is_resolved": true,
+      "steps_used": 5,
+      "elapsed_s": 2.4,
+      "steps": [
+        {
+          "step": 1,
+          "command": "Measure power draw metrics across physical charging nodes.",
+          "reward": 0.035,
+          "error": null
+        },
+        {
+          "step": 2,
+          "command": "Detect severe load concentration on Phase A circuits.",
+          "reward": 0.031,
+          "error": null
+        },
+        {
+          "step": 3,
+          "command": "Apply static rule-based scheduling limits.",
+          "reward": -0.05,
+          "error": "Suboptimal fixed rule applied"
+        },
+        {
+          "step": 4,
+          "command": "Distribute available power evenly among active EVs.",
+          "reward": -0.05,
+          "error": "Suboptimal fixed rule applied"
+        },
+        {
+          "step": 5,
+          "command": "Finalize heuristic schedule.",
+          "reward": 0.032,
+          "error": null
+        }
+      ],
+      "grader_breakdown": {
+        "_efficiency_mult": 1.0,
+        "sa_checked_grid": 0.1,
+        "sa_checked_soc": 0.1,
+        "pi_identified_urgent": 0.105,
+        "pi_identified_overload": 0.148,
+        "res_power_allocated": 0.2,
+        "res_load_balanced": 0.2,
+        "bp_no_overload": 0.077,
+        "bp_cost_efficient": 0.085
+      }
+    },
+    {
+      "task_id": "task_11",
+      "task_name": "Demand Spike Mismanagement",
+      "difficulty": "medium",
+      "grader_score": 0.471,
+      "is_resolved": false,
+      "steps_used": 5,
+      "elapsed_s": 6.0,
+      "steps": [
+        {
+          "step": 1,
+          "command": "Trace sudden influx of 15 simultaneous charging requests.",
+          "reward": 0.047,
+          "error": null
+        },
+        {
+          "step": 2,
+          "command": "Analyze initial system response and power allocation.",
+          "reward": 0.037,
+          "error": null
+        },
+        {
+          "step": 3,
+          "command": "Apply static rule-based scheduling limits.",
+          "reward": -0.05,
+          "error": "Suboptimal fixed rule applied"
+        },
+        {
+          "step": 4,
+          "command": "Distribute available power evenly among active EVs.",
+          "reward": -0.05,
+          "error": "Suboptimal fixed rule applied"
+        },
+        {
+          "step": 5,
+          "command": "Finalize heuristic schedule.",
+          "reward": 0.034,
+          "error": "Failed edge case constraint"
+        }
+      ],
+      "grader_breakdown": {
+        "_efficiency_mult": 1.0,
+        "sa_checked_grid": 0.1,
+        "sa_checked_soc": 0.1,
+        "res_power_allocated": 0.05
+      }
+    },
+    {
+      "task_id": "task_12",
+      "task_name": "Renewable Energy Neglect",
+      "difficulty": "hard",
+      "grader_score": 0.681,
+      "is_resolved": false,
+      "steps_used": 5,
+      "elapsed_s": 3.9,
+      "steps": [
+        {
+          "step": 1,
+          "command": "Query local real-time solar PV generation output telemetry.",
+          "reward": 0.015,
+          "error": null
+        },
+        {
+          "step": 2,
+          "command": "Compare PV generation against building load and EV demand.",
+          "reward": 0.039,
+          "error": null
+        },
+        {
+          "step": 3,
+          "command": "Apply static rule-based scheduling limits.",
+          "reward": -0.05,
+          "error": "Suboptimal fixed rule applied"
+        },
+        {
+          "step": 4,
+          "command": "Distribute available power evenly among active EVs.",
+          "reward": -0.05,
+          "error": "Suboptimal fixed rule applied"
+        },
+        {
+          "step": 5,
+          "command": "Finalize heuristic schedule.",
+          "reward": 0.024,
+          "error": null
+        }
+      ],
+      "grader_breakdown": {
+        "_efficiency_mult": 1.0,
+        "sa_checked_grid": 0.1,
+        "sa_checked_soc": 0.1,
+        "pi_identified_urgent": 0.134,
+        "pi_identified_overload": 0.123,
+        "res_power_allocated": 0.05
+      }
+    },
+    {
+      "task_id": "task_13",
+      "task_name": "Optimization Trade-off Conflict",
+      "difficulty": "hard",
+      "grader_score": 0.512,
+      "is_resolved": false,
+      "steps_used": 5,
+      "elapsed_s": 4.6,
+      "steps": [
+        {
+          "step": 1,
+          "command": "Evaluate cost, SOC urgency, and grid capacity constraints.",
+          "reward": 0.02,
+          "error": null
+        },
+        {
+          "step": 2,
+          "command": "Compute Pareto optimal frontier for the current scenario.",
+          "reward": 0.042,
+          "error": null
+        },
+        {
+          "step": 3,
+          "command": "Apply static rule-based scheduling limits.",
+          "reward": -0.05,
+          "error": "Suboptimal fixed rule applied"
+        },
+        {
+          "step": 4,
+          "command": "Distribute available power evenly among active EVs.",
+          "reward": -0.05,
+          "error": "Suboptimal fixed rule applied"
+        },
+        {
+          "step": 5,
+          "command": "Finalize heuristic schedule.",
+          "reward": 0.015,
+          "error": "Failed edge case constraint"
+        }
+      ],
+      "grader_breakdown": {
+        "_efficiency_mult": 1.0,
+        "sa_checked_grid": 0.1,
+        "sa_checked_soc": 0.1,
+        "res_power_allocated": 0.05
+      }
+    },
+    {
+      "task_id": "task_14",
+      "task_name": "Charging Instability Oscillation",
+      "difficulty": "hard",
+      "grader_score": 0.592,
+      "is_resolved": false,
+      "steps_used": 5,
+      "elapsed_s": 2.0,
+      "steps": [
+        {
+          "step": 1,
+          "command": "Monitor high-frequency charging rate variance across nodes.",
+          "reward": 0.017,
+          "error": null
+        },
+        {
+          "step": 2,
+          "command": "Analyze power allocation logs over the trailing 15 minutes.",
+          "reward": 0.041,
+          "error": null
+        },
+        {
+          "step": 3,
+          "command": "Apply static rule-based scheduling limits.",
+          "reward": -0.05,
+          "error": "Suboptimal fixed rule applied"
+        },
+        {
+          "step": 4,
+          "command": "Distribute available power evenly among active EVs.",
+          "reward": -0.05,
+          "error": "Suboptimal fixed rule applied"
+        },
+        {
+          "step": 5,
+          "command": "Finalize heuristic schedule.",
+          "reward": 0.032,
+          "error": "Failed edge case constraint"
+        }
+      ],
+      "grader_breakdown": {
+        "_efficiency_mult": 1.0,
+        "sa_checked_grid": 0.1,
+        "sa_checked_soc": 0.1,
+        "res_power_allocated": 0.05
+      }
+    },
+    {
+      "task_id": "task_15",
+      "task_name": "Cost Accumulation Drift",
+      "difficulty": "hard",
+      "grader_score": 0.748,
+      "is_resolved": true,
+      "steps_used": 5,
+      "elapsed_s": 4.7,
+      "steps": [
+        {
+          "step": 1,
+          "command": "Audit long-term electricity expenditure over 30 days.",
+          "reward": 0.021,
+          "error": null
+        },
+        {
+          "step": 2,
+          "command": "Correlate daily spending peaks with charging schedules.",
+          "reward": 0.037,
+          "error": null
+        },
+        {
+          "step": 3,
+          "command": "Apply static rule-based scheduling limits.",
+          "reward": -0.05,
+          "error": "Suboptimal fixed rule applied"
+        },
+        {
+          "step": 4,
+          "command": "Distribute available power evenly among active EVs.",
+          "reward": -0.05,
+          "error": "Suboptimal fixed rule applied"
+        },
+        {
+          "step": 5,
+          "command": "Finalize heuristic schedule.",
+          "reward": 0.042,
+          "error": null
+        }
+      ],
+      "grader_breakdown": {
+        "_efficiency_mult": 1.0,
+        "sa_checked_grid": 0.1,
+        "sa_checked_soc": 0.1,
+        "pi_identified_urgent": 0.127,
+        "pi_identified_overload": 0.115,
+        "res_power_allocated": 0.2,
+        "res_load_balanced": 0.2,
+        "bp_no_overload": 0.092,
+        "bp_cost_efficient": 0.078
+      }
+    },
+    {
+      "task_id": "task_16",
+      "task_name": "Safety Constraint Violation",
+      "difficulty": "hard",
+      "grader_score": 0.617,
+      "is_resolved": false,
+      "steps_used": 5,
+      "elapsed_s": 5.3,
+      "steps": [
+        {
+          "step": 1,
+          "command": "Ingest emergency alerts from grid monitoring relays.",
+          "reward": 0.021,
+          "error": null
+        },
+        {
+          "step": 2,
+          "command": "Detect critical physical infrastructure thermal thresholds breached.",
+          "reward": 0.04,
+          "error": null
+        },
+        {
+          "step": 3,
+          "command": "Apply static rule-based scheduling limits.",
+          "reward": -0.05,
+          "error": "Suboptimal fixed rule applied"
+        },
+        {
+          "step": 4,
+          "command": "Distribute available power evenly among active EVs.",
+          "reward": -0.05,
+          "error": "Suboptimal fixed rule applied"
+        },
+        {
+          "step": 5,
+          "command": "Finalize heuristic schedule.",
+          "reward": 0.03,
+          "error": null
+        }
+      ],
+      "grader_breakdown": {
+        "_efficiency_mult": 1.0,
+        "sa_checked_grid": 0.1,
+        "sa_checked_soc": 0.1,
+        "pi_identified_urgent": 0.134,
+        "pi_identified_overload": 0.149,
+        "res_power_allocated": 0.05
+      }
+    },
+    {
+      "task_id": "task_17",
+      "task_name": "Full-System Optimization Failure",
+      "difficulty": "hard",
+      "grader_score": 0.63,
+      "is_resolved": false,
+      "steps_used": 5,
+      "elapsed_s": 2.7,
+      "steps": [
+        {
+          "step": 1,
+          "command": "Gather global state parameters: grid load, market prices, SOC.",
+          "reward": 0.019,
+          "error": null
+        },
+        {
+          "step": 2,
+          "command": "Analyze systemic breakdown of previous scheduling algorithm.",
+          "reward": 0.047,
+          "error": null
+        },
+        {
+          "step": 3,
+          "command": "Apply static rule-based scheduling limits.",
+          "reward": -0.05,
+          "error": "Suboptimal fixed rule applied"
+        },
+        {
+          "step": 4,
+          "command": "Distribute available power evenly among active EVs.",
+          "reward": -0.05,
+          "error": "Suboptimal fixed rule applied"
+        },
+        {
+          "step": 5,
+          "command": "Finalize heuristic schedule.",
+          "reward": 0.023,
+          "error": null
+        }
+      ],
+      "grader_breakdown": {
+        "_efficiency_mult": 1.0,
+        "sa_checked_grid": 0.1,
+        "sa_checked_soc": 0.1,
+        "pi_identified_urgent": 0.111,
+        "pi_identified_overload": 0.114,
+        "res_power_allocated": 0.05
+      }
+    }
+  ]
+}

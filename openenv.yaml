@@ -1,0 +1,57 @@
+name: "EVChargingEnv"
+version: "1.0.0"
+entry_point: "env.ev_env:EVChargingEnv"
+description: "RL-based EV charging optimization environment."
+action_space:
+  type: "continuous"
+  shape: [5]
+  minimum: 0.0
+  maximum: 1.0
+  description: "Ratio of the maximum localized charging rate to allocate to each connected vehicle per step."
+observation_space:
+  soc:
+    type: "array"
+    shape: [5]
+    minimum: 0.0
+    maximum: 1.0
+    description: "State of charge percentage for every vehicle."
+  grid_load:
+    type: "array"
+    shape: [1]
+    minimum: 0.0
+    maximum: 1.0
+    description: "Real-time normalized evaluation of the structural load vs grid capacity."
+  time:
+    type: "array"
+    shape: [1]
+    minimum: 0.0
+    maximum: 1.0
+    description: "Normalized timestep representing the current simulation step."
+  arrival_flags:
+    type: "array"
+    shape: [5]
+    minimum: 0.0
+    maximum: 1.0
+    description: "Boolean arrays mapping physical vehicle presence at the charger."
+  time_remaining:
+    type: "array"
+    shape: [5]
+    minimum: 0.0
+    maximum: 1.0
+    description: "Normalized countdown until vehicle departure."
+reward:
+  type: "float"
+  range: [0.0, 1.0]
+  description: "Normalized reward signal for agent performance"
+tasks:
+  easy:
+    objective: "Charge all vehicles to >=85% SOC without overload"
+    success_metric: "mean_soc >= 0.85"
+
+  medium:
+    objective: "Minimize cost while achieving >=90% SOC"
+    success_metric: "score >= 0.7"
+
+  hard:
+    objective: "Balance cost, SOC, and grid safety under strict constraints"
+    success_metric: "score >= 0.8"

@@ -1,0 +1,6 @@
+{
+  "include": ["app", "env", "scripts"],
+  "extraPaths": ["app", "."],
+  "pythonVersion": "3.10",
+  "typeCheckingMode": "basic"
+}
